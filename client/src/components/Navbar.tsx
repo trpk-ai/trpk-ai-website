@@ -1,7 +1,7 @@
 /*
- * DESIGN: Granite Terminal — Navbar
+ * DESIGN: Granite Terminal — Navbar (Thought Leadership)
  * Minimal fixed nav. Monospace logo with teal dot accent.
- * Transparent → frosted glass on scroll. Clean geometric links.
+ * Transparent → frosted glass on scroll. Links: Worldview, Writing, Engage, Connect.
  */
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
@@ -28,9 +28,9 @@ export default function Navbar() {
   };
 
   const navLinks = [
-    { href: "/#about", label: "About" },
-    { href: "/#services", label: "Services" },
+    { href: "/#about", label: "Worldview" },
     { href: "/blog", label: "Writing" },
+    { href: "/#engage", label: "Engage" },
     { href: "/#connect", label: "Connect" },
   ];
 
@@ -95,7 +95,7 @@ export default function Navbar() {
               rel="noopener noreferrer"
               className="text-[0.75rem] font-mono font-medium tracking-wide text-[oklch(0.65_0.12_190)] border border-[oklch(0.65_0.12_190/0.25)] px-4 py-1.5 rounded-sm hover:bg-[oklch(0.65_0.12_190/0.06)] hover:border-[oklch(0.65_0.12_190/0.4)] transition-all duration-300"
             >
-              Book a Call
+              Let's Talk
             </a>
           </div>
 
@@ -159,7 +159,7 @@ export default function Navbar() {
             rel="noopener noreferrer"
             className="font-mono text-lg text-[oklch(0.65_0.12_190)] mt-4"
           >
-            Book a Call →
+            Let's Talk →
           </a>
         </nav>
       </div>

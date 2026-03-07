@@ -1,7 +1,7 @@
 /*
- * DESIGN: Granite Terminal — Footer
+ * DESIGN: Granite Terminal — Footer (Thought Leadership)
  * Minimal. Dark granite background. Teal accent dot.
- * Monospace links. Copyright. Social links placeholder.
+ * Updated nav labels: Worldview, Writing, Engage, Connect.
  */
 import { Link } from "wouter";
 
@@ -9,10 +9,10 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[oklch(0.12_0.01_260)] py-12 sm:py-16">
+    <footer className="bg-[oklch(0.08_0.01_260)] py-10 sm:py-14">
       <div className="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-12">
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8">
-          {/* Logo */}
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 sm:gap-8">
+          {/* Logo + tagline */}
           <div>
             <Link
               href="/"
@@ -21,17 +21,17 @@ export default function Footer() {
               <span className="w-1.5 h-1.5 rounded-full bg-[oklch(0.65_0.12_190)]" />
               trpk.ai
             </Link>
-            <p className="mt-3 text-[0.75rem] font-mono text-[oklch(0.45_0.005_85)] tracking-wider">
-              AI Transformation · Platform Engineering · Agentic Systems
+            <p className="mt-2 text-[0.6875rem] font-mono text-[oklch(0.45_0.005_85)] tracking-wide max-w-xs">
+              Platform Engineering · Agentic AI · Engineering Leadership
             </p>
           </div>
 
-          {/* Links */}
-          <div className="flex flex-wrap gap-x-6 gap-y-2">
+          {/* Nav links */}
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
             {[
-              { href: "/#about", label: "About" },
-              { href: "/#services", label: "Services" },
+              { href: "/#about", label: "Worldview" },
               { href: "/blog", label: "Writing" },
+              { href: "/#engage", label: "Engage" },
               { href: "/#connect", label: "Connect" },
             ].map((link) =>
               link.href.startsWith("/#") ? (
@@ -63,19 +63,19 @@ export default function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="mt-8 sm:mt-12 h-px bg-gradient-to-r from-[oklch(0.65_0.12_190/0.15)] via-[oklch(0.65_0.12_190/0.08)] to-transparent" />
+        <div className="mt-8 sm:mt-10 h-px bg-gradient-to-r from-[oklch(0.65_0.12_190/0.15)] via-[oklch(0.65_0.12_190/0.08)] to-transparent" />
 
         {/* Bottom */}
-        <div className="mt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <p className="text-[0.6875rem] font-mono text-[oklch(0.4_0.005_85)] tracking-wider">
-            &copy; {currentYear} trpk.ai &mdash; All rights reserved
+        <div className="mt-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+          <p className="text-[0.625rem] font-mono text-[oklch(0.35_0.005_85)] tracking-wider">
+            &copy; {currentYear} TRPK.AI &mdash; All rights reserved
           </p>
           <div className="flex items-center gap-4">
             <a
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[0.6875rem] font-mono text-[oklch(0.45_0.005_85)] hover:text-[oklch(0.65_0.12_190)] transition-colors duration-300 tracking-wider"
+              className="text-[0.6875rem] font-mono text-[oklch(0.45_0.005_85)] hover:text-[oklch(0.65_0.12_190)] transition-colors duration-300"
             >
               LinkedIn
             </a>
@@ -83,7 +83,7 @@ export default function Footer() {
               href="https://github.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[0.6875rem] font-mono text-[oklch(0.45_0.005_85)] hover:text-[oklch(0.65_0.12_190)] transition-colors duration-300 tracking-wider"
+              className="text-[0.6875rem] font-mono text-[oklch(0.45_0.005_85)] hover:text-[oklch(0.65_0.12_190)] transition-colors duration-300"
             >
               GitHub
             </a>
@@ -91,7 +91,7 @@ export default function Footer() {
               href="https://x.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[0.6875rem] font-mono text-[oklch(0.45_0.005_85)] hover:text-[oklch(0.65_0.12_190)] transition-colors duration-300 tracking-wider"
+              className="text-[0.6875rem] font-mono text-[oklch(0.45_0.005_85)] hover:text-[oklch(0.65_0.12_190)] transition-colors duration-300"
             >
               X
             </a>

@@ -1,8 +1,7 @@
 /*
- * DESIGN: Granite Terminal — Connect/CTA
- * Dark granite background with Mirror Lake image. Teal accent lines.
- * Newsletter signup for subscription-ready architecture.
- * Three offering cards. Clean, futuristic-nature feel.
+ * DESIGN: Granite Terminal — Connect (Thought Leadership)
+ * Newsletter-first. Booking secondary. Dark granite background with Mirror Lake.
+ * Framing: "Stay close to the thinking" not "hire me".
  */
 import { useState } from "react";
 
@@ -29,124 +28,81 @@ export default function Connect() {
           loading="lazy"
         />
         <div className="absolute inset-0 bg-[oklch(0.12_0.01_260/0.88)]" />
-        {/* Dot grid overlay */}
         <div className="absolute inset-0 dot-grid opacity-10" />
       </div>
 
-      <div className="relative z-10 max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
-          {/* Left — CTA */}
-          <div>
-            <p className="font-mono text-[0.6875rem] tracking-[0.15em] uppercase text-[oklch(0.65_0.12_190)] mb-4 sm:mb-6 fade-up">
-              // connect
-            </p>
+      <div className="relative z-10 max-w-[700px] mx-auto px-5 sm:px-6 lg:px-12 text-center">
+        <p className="font-mono text-[0.6875rem] tracking-[0.15em] uppercase text-[oklch(0.65_0.12_190)] mb-5 sm:mb-6 fade-up">
+          // connect
+        </p>
 
-            <h2 className="font-heading text-[oklch(0.95_0.005_85)] fade-up fade-up-delay-1">
-              Ready to turn complexity into{" "}
-              <span className="gradient-text">leverage</span>?
-            </h2>
+        <h2 className="font-heading text-[oklch(0.95_0.005_85)] fade-up fade-up-delay-1">
+          Stay close to the{" "}
+          <span className="gradient-text">thinking</span>.
+        </h2>
 
-            <p className="mt-4 sm:mt-6 text-[0.9375rem] sm:text-base leading-relaxed text-[oklch(0.7_0.005_85)] fade-up fade-up-delay-2">
-              I offer complimentary initial consultations. No pitch, no
-              pressure — just an honest conversation about what's possible.
-            </p>
+        <p className="mt-4 sm:mt-6 text-[0.9375rem] sm:text-base leading-[1.8] text-[oklch(0.7_0.005_85)] max-w-lg mx-auto fade-up fade-up-delay-2">
+          Weekly perspectives on platform engineering, agentic AI, and
+          engineering leadership — from someone who's built it for 15 years,
+          not just studied it. No spam. Unsubscribe anytime.
+        </p>
 
-            {/* Offerings */}
-            <div className="mt-8 sm:mt-10 space-y-4 fade-up fade-up-delay-3">
-              {[
-                {
-                  label: "Free Consultation",
-                  desc: "30-min strategy session",
-                },
-                {
-                  label: "Executive Coaching",
-                  desc: "Leadership in the agentic era",
-                },
-                {
-                  label: "Interview Prep",
-                  desc: "System design at Staff+ level",
-                },
-              ].map((item) => (
-                <div
-                  key={item.label}
-                  className="flex items-center gap-4 group"
-                >
-                  <span className="w-1.5 h-1.5 rounded-full bg-[oklch(0.65_0.12_190)] group-hover:shadow-[0_0_8px_oklch(0.65_0.12_190/0.5)] transition-shadow duration-300" />
-                  <div className="flex items-baseline gap-3">
-                    <p className="text-sm font-sans font-medium text-[oklch(0.95_0.005_85)]">
-                      {item.label}
-                    </p>
-                    <p className="text-[0.6875rem] font-mono text-[oklch(0.55_0.005_85)]">
-                      {item.desc}
-                    </p>
-                  </div>
-                </div>
-              ))}
+        {/* Newsletter form */}
+        <div className="mt-8 sm:mt-10 fade-up fade-up-delay-3">
+          {subscribed ? (
+            <div className="inline-flex items-center gap-2 px-6 py-3 bg-[oklch(0.65_0.12_190/0.1)] border border-[oklch(0.65_0.12_190/0.2)] rounded-sm">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8.5l3 3 7-7" stroke="oklch(0.65 0.12 190)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+              <span className="text-sm font-mono text-[oklch(0.65_0.12_190)]">
+                You're in. First issue coming soon.
+              </span>
             </div>
-
-            <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-stretch sm:items-start gap-3 sm:gap-4 fade-up fade-up-delay-4">
-              <a
-                href="https://calendly.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[oklch(0.65_0.12_190)] text-[oklch(0.98_0.005_85)] text-sm font-sans font-medium tracking-wide rounded-sm hover:bg-[oklch(0.72_0.12_190)] transition-colors duration-300"
+          ) : (
+            <form
+              onSubmit={handleSubscribe}
+              className="flex flex-col sm:flex-row items-stretch gap-3 max-w-md mx-auto"
+            >
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="your@email.com"
+                required
+                className="flex-1 px-4 py-3 bg-[oklch(0.1_0.01_260/0.6)] border border-[oklch(0.95_0.005_85/0.12)] rounded-sm text-sm font-sans text-[oklch(0.95_0.005_85)] placeholder:text-[oklch(0.5_0.005_85)] focus:outline-none focus:border-[oklch(0.65_0.12_190/0.4)] focus:ring-1 focus:ring-[oklch(0.65_0.12_190/0.2)] transition-all duration-300"
+              />
+              <button
+                type="submit"
+                className="px-6 py-3 bg-[oklch(0.65_0.12_190)] text-[oklch(0.98_0.005_85)] text-sm font-sans font-medium tracking-wide rounded-sm hover:bg-[oklch(0.72_0.12_190)] transition-colors duration-300 whitespace-nowrap"
               >
-                Schedule a Call →
-              </a>
-              <a
-                href="mailto:hello@trpk.ai"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-[oklch(0.95_0.005_85/0.15)] text-[oklch(0.8_0.005_85)] text-sm font-sans tracking-wide rounded-sm hover:border-[oklch(0.65_0.12_190/0.3)] hover:text-[oklch(0.95_0.005_85)] transition-all duration-300"
-              >
-                hello@trpk.ai
-              </a>
-            </div>
-          </div>
+                Subscribe
+              </button>
+            </form>
+          )}
+        </div>
 
-          {/* Right — Newsletter */}
-          <div className="flex items-end lg:items-center">
-            <div className="w-full fade-up fade-up-delay-3">
-              <div className="border border-[oklch(0.95_0.005_85/0.1)] rounded-sm p-6 sm:p-8 bg-[oklch(0.15_0.01_260/0.5)] backdrop-blur-sm">
-                <p className="font-mono text-[0.625rem] tracking-[0.15em] uppercase text-[oklch(0.65_0.12_190)] mb-3">
-                  // newsletter
-                </p>
-                <h3 className="font-heading font-semibold text-xl sm:text-2xl text-[oklch(0.95_0.005_85)] tracking-tight mb-2">
-                  Weekly insights
-                </h3>
-                <p className="text-[0.8125rem] sm:text-sm leading-relaxed text-[oklch(0.6_0.005_85)] mb-6">
-                  AI transformation, agentic systems, platform engineering, and
-                  system design — delivered to your inbox. Free and premium tiers
-                  coming soon.
-                </p>
-
-                {subscribed ? (
-                  <div className="flex items-center gap-2 text-sm text-[oklch(0.65_0.12_190)]">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                      <path d="M3 8l3 3 7-7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                    <span className="font-mono text-[0.8125rem]">
-                      You're on the list. Welcome.
-                    </span>
-                  </div>
-                ) : (
-                  <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-2">
-                    <input
-                      type="email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      placeholder="your@email.com"
-                      required
-                      className="flex-1 px-4 py-2.5 bg-[oklch(0.1_0.01_260)] border border-[oklch(0.95_0.005_85/0.1)] rounded-sm text-sm text-[oklch(0.9_0.005_85)] placeholder:text-[oklch(0.45_0.005_85)] font-mono focus:outline-none focus:border-[oklch(0.65_0.12_190/0.4)] transition-colors"
-                    />
-                    <button
-                      type="submit"
-                      className="px-5 py-2.5 bg-[oklch(0.65_0.12_190)] text-[oklch(0.98_0.005_85)] text-sm font-sans font-medium rounded-sm hover:bg-[oklch(0.72_0.12_190)] transition-colors duration-300"
-                    >
-                      Subscribe
-                    </button>
-                  </form>
-                )}
-              </div>
-            </div>
+        {/* Secondary CTA — booking */}
+        <div className="mt-10 sm:mt-14 fade-up fade-up-delay-4">
+          <div className="h-px w-24 mx-auto bg-gradient-to-r from-transparent via-[oklch(0.65_0.12_190/0.3)] to-transparent mb-6 sm:mb-8" />
+          <p className="text-[0.8125rem] text-[oklch(0.6_0.005_85)] mb-3">
+            Want to go deeper? Let's talk.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a
+              href="https://calendly.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm font-mono font-medium text-[oklch(0.65_0.12_190)] hover:text-[oklch(0.72_0.12_190)] transition-colors duration-300"
+            >
+              Book a free call →
+            </a>
+            <span className="hidden sm:block w-px h-4 bg-[oklch(0.95_0.005_85/0.15)]" />
+            <a
+              href="mailto:hello@trpk.ai"
+              className="inline-flex items-center gap-2 text-sm font-mono text-[oklch(0.55_0.005_85)] hover:text-[oklch(0.65_0.12_190)] transition-colors duration-300"
+            >
+              hello@trpk.ai
+            </a>
           </div>
         </div>
       </div>

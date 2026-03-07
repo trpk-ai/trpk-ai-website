@@ -1,8 +1,8 @@
 /*
- * DESIGN: Granite Terminal — Writing Preview
+ * DESIGN: Granite Terminal — Writing (THE core section)
+ * Writing IS the product. This is the most prominent section after the hero.
  * Latest 4 articles in editorial list. Terminal-style date/category labels.
- * Teal hover accents. Premium/Free indicators for subscription readiness.
- * Tags displayed on each article card.
+ * Teal hover accents. Tags on each card. Sticky sidebar header.
  */
 import { Link } from "wouter";
 import { articles, formatDate } from "@/lib/data";
@@ -21,12 +21,14 @@ export default function Writing() {
             <div className="lg:sticky lg:top-28">
               <p className="terminal-label mb-4 sm:mb-6 fade-up">// writing</p>
               <h2 className="fade-up fade-up-delay-1">
-                Ideas on building{" "}
-                <span className="gradient-text">what matters</span>.
+                Ideas shaped by{" "}
+                <span className="gradient-text">building</span>,{" "}
+                not just observing.
               </h2>
               <p className="mt-4 sm:mt-6 text-[0.875rem] sm:text-[0.9375rem] leading-[1.75] text-[oklch(0.5_0.01_260)] fade-up fade-up-delay-2">
-                Technology, strategy, health, and the products shaping how we
-                live and work. New articles weekly.
+                On platform engineering, agentic AI, engineering leadership,
+                and the products shaping how we live and work. Perspectives
+                from 15 years of building — not from the sidelines.
               </p>
               <Link
                 href="/blog"
