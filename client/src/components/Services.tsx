@@ -1,8 +1,8 @@
 /*
  * DESIGN: Granite Terminal — Services
- * 4 services in a 2x2 grid. Each card has a teal number accent,
+ * 3 services in a responsive grid. Each card has a teal number accent,
  * dot-grid background on hover, and glow effect. Terminal-style labels.
- * Services: AI/Agentic, Platform Eng, FinOps, System Design Interview Prep
+ * Services: AI/Agentic, Platform Engineering (with FinOps baked in), System Design Interview Prep
  */
 import { services } from "@/lib/data";
 
@@ -29,7 +29,7 @@ export default function Services() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 lg:gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6">
           {services.map((service, i) => (
             <article
               key={service.number}
@@ -42,11 +42,11 @@ export default function Services() {
                 </span>
               </div>
 
-              <h3 className="font-heading font-semibold text-lg sm:text-xl lg:text-[1.375rem] text-[oklch(0.18_0.01_260)] mb-3 sm:mb-4 tracking-tight leading-snug">
+              <h3 className="font-heading font-semibold text-lg sm:text-xl lg:text-[1.25rem] text-[oklch(0.18_0.01_260)] mb-3 sm:mb-4 tracking-tight leading-snug">
                 {service.title}
               </h3>
 
-              <p className="text-[0.875rem] sm:text-[0.9375rem] leading-[1.75] text-[oklch(0.4_0.01_260)] mb-5 sm:mb-6">
+              <p className="text-[0.8125rem] sm:text-[0.875rem] leading-[1.75] text-[oklch(0.4_0.01_260)] mb-5 sm:mb-6">
                 {service.description}
               </p>
 
@@ -54,9 +54,9 @@ export default function Services() {
                 {service.outcomes.map((outcome) => (
                   <li
                     key={outcome}
-                    className="flex items-center gap-3 text-[0.8125rem] sm:text-sm text-[oklch(0.5_0.01_260)]"
+                    className="flex items-start gap-3 text-[0.75rem] sm:text-[0.8125rem] text-[oklch(0.5_0.01_260)]"
                   >
-                    <span className="w-1 h-1 rounded-full bg-[oklch(0.65_0.12_190)] flex-shrink-0" />
+                    <span className="w-1 h-1 rounded-full bg-[oklch(0.65_0.12_190)] flex-shrink-0 mt-1.5" />
                     {outcome}
                   </li>
                 ))}

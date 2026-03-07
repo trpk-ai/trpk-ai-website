@@ -3,6 +3,7 @@
  * Full-viewport hero with Yosemite panorama background.
  * Left-aligned text with gradient accent word. Dot-grid overlay for tech feel.
  * Teal circuit line at bottom. Business-value focused headline.
+ * NO job title. NO role mention. Pure value proposition.
  */
 
 export default function Hero() {
@@ -27,20 +28,20 @@ export default function Hero() {
         <div className="max-w-3xl">
           {/* Terminal label */}
           <p className="terminal-label mb-5 sm:mb-6 fade-up">
-            AI · Platform Engineering · FinOps
+            AI Transformation · Platform Engineering · Agentic Systems
           </p>
 
           {/* Headline */}
           <h1 className="fade-up fade-up-delay-1">
-            I help organizations{" "}
-            <span className="gradient-text">ship faster</span>{" "}
-            with AI, platforms, and financial clarity.
+            Turning AI pilots into{" "}
+            <span className="gradient-text">production systems</span>{" "}
+            that compound business value.
           </h1>
 
           {/* Subline */}
           <p className="mt-5 sm:mt-7 text-[0.9375rem] sm:text-base lg:text-[1.0625rem] leading-relaxed max-w-xl text-[oklch(0.38_0.01_260)] fade-up fade-up-delay-2">
-            From multi-agent architectures to internal developer platforms to
-            FinOps — I turn complexity into competitive advantage.
+            From multi-agent architectures to agent-consumable platforms —
+            I help engineering teams ship what matters, faster.
           </p>
 
           {/* CTAs */}

@@ -60,7 +60,7 @@ export default function Connect() {
                 },
                 {
                   label: "Executive Coaching",
-                  desc: "Leadership in the AI era",
+                  desc: "Leadership in the agentic era",
                 },
                 {
                   label: "Interview Prep",
@@ -113,8 +113,8 @@ export default function Connect() {
                   Weekly insights
                 </h3>
                 <p className="text-[0.8125rem] sm:text-sm leading-relaxed text-[oklch(0.6_0.005_85)] mb-6">
-                  AI transformation, platform engineering, FinOps, and system
-                  design — delivered to your inbox. Free and premium tiers
+                  AI transformation, agentic systems, platform engineering, and
+                  system design — delivered to your inbox. Free and premium tiers
                   coming soon.
                 </p>
 

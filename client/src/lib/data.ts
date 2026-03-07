@@ -22,59 +22,123 @@ export const services: Service[] = [
     number: "01",
     title: "AI Transformation & Agentic Systems",
     description:
-      "From Copilot rollouts to multi-agentic architectures — helping organizations move past pilots into production-grade AI that compounds business value.",
+      "From GitHub Copilot rollouts to multi-agent orchestration in production — helping organizations move past demos into compound AI systems that deliver measurable business value. Agent harnesses, governance frameworks, and the infrastructure that makes agentic AI reliable at scale.",
     outcomes: [
-      "Multi-agent framework design",
-      "Copilot enterprise strategy",
-      "AI governance & guardrails",
+      "Multi-agent architecture & orchestration design",
+      "GitHub Copilot enterprise strategy & custom agents",
+      "Agent governance, guardrails & cost attribution",
+      "Agentic workflow automation (SDLC, ops, support)",
     ],
   },
   {
     number: "02",
     title: "Platform Engineering",
     description:
-      "Building internal developer platforms that eliminate toil, reduce cognitive load, and turn infrastructure into a competitive advantage. Golden paths, self-service, developer portals.",
+      "Platform engineering has evolved. It's no longer about building internal developer portals — it's about designing agent-consumable infrastructure where AI agents reason over API schemas, generate validated IaC, and enforce policy inline. Golden paths become machine-readable blueprints. FinOps is embedded at the platform layer, with GPU cost governance and AI spend attribution built into every workflow.",
     outcomes: [
-      "IDP architecture & golden paths",
-      "Developer portal strategy",
-      "DORA metrics & SDLC optimization",
+      "Agentic developer loop design (Copilot CLI, Claude Code)",
+      "Agent-consumable IaC & policy-as-code architecture",
+      "FinOps embedded in platform (AI spend, GPU utilization)",
+      "DORA metrics, developer experience & SDLC optimization",
     ],
   },
   {
     number: "03",
-    title: "FinOps & Cloud Optimization",
-    description:
-      "Bringing financial accountability to cloud operations. Cost visibility, allocation models, and optimization strategies that align engineering decisions with business outcomes.",
-    outcomes: [
-      "Cloud cost visibility frameworks",
-      "FinOps operating model design",
-      "Unit economics & showback",
-    ],
-  },
-  {
-    number: "04",
     title: "System Design Interview Prep",
     description:
-      "Intensive coaching for engineers preparing for Staff+, Principal, and Distinguished-level system design interviews at top-tier technology companies.",
+      "Intensive coaching for engineers preparing for Staff+, Principal, and Distinguished-level system design interviews at top-tier technology companies. Real-world architecture trade-offs, not textbook answers. Focused on the thinking that distinguishes senior from staff.",
     outcomes: [
-      "Large-scale system design practice",
-      "Architecture trade-off analysis",
-      "Mock interviews with feedback",
+      "Large-scale distributed system design practice",
+      "Architecture trade-off analysis & decision frameworks",
+      "Mock interviews with structured feedback",
+      "AI-era system design (agent orchestration, RAG, vector DBs)",
     ],
   },
 ];
 
 export const articles: Article[] = [
   {
+    slug: "platform-engineering-agentic-ai-era",
+    title: "Platform Engineering for the Agentic AI Era",
+    excerpt:
+      "The interaction stack is collapsing. Agents are bypassing humans as API translators. IaC is becoming an implementation artifact, not the source of truth. Here's what platform teams need to build next.",
+    category: "Technology",
+    date: "2026-03-06",
+    readTime: "12 min",
+    featured: true,
+    tags: ["Platform Engineering", "Agentic AI", "IaC"],
+    content: `For a decade, platform engineering relied on explicit API interaction layers: CLIs, SDKs, pipelines, wrappers, and UI workflows that translate human intent into machine-safe API calls. AI agents are now short-circuiting much of that stack.
+
+## The Stack Is Collapsing
+
+The traditional model placed Infrastructure as Code in a multi-layer intent-to-execution stack. Human intent gets translated through an interaction layer into IaC abstractions, which drive provider APIs. These layers exist to enforce correctness, translate intent, and compensate for the fact that humans don't naturally speak API schemas.
+
+AI agents fundamentally change this flow. Modern agents ingest natural language intent, reason over API schemas, generate and validate IaC, and apply changes directly via provider APIs — all while enforcing guardrails inline. The result: Human intent → Agent (reasoning + policy) → IaC / APIs.
+
+## Modules Become Knowledge
+
+This is the shift that matters most for platform teams. Terraform modules, Bicep templates, and Helm charts are evolving from human-authored abstractions into agent-consumable patterns that encode architectural standards and preferred defaults. The agent selects them automatically based on context.
+
+Golden paths become machine-readable blueprints. A reference architecture diagram for a workload type becomes a machine-consumable blueprint — the agent selects the pattern, fills in parameters, generates repos and config, and opens a PR with diagram-linked justification.
+
+## FinOps Is Now a Platform Concern
+
+With 98% of FinOps practitioners now managing AI spend (up from 31% two years ago), cost governance can no longer live in a separate dashboard. GPU utilization is the new frontier — GPUs are expensive and often wasted. Platform teams must embed cost attribution, spend alerts, and unit economics directly into the developer workflow.
+
+The organizations that get this right treat FinOps as a platform capability, not a finance initiative. Cost becomes another dimension of quality alongside performance, reliability, and security.
+
+## What Platform Teams Should Build Now
+
+Four things matter: agent-consumable infrastructure patterns, policy-as-code that agents can reason over, embedded cost governance at the platform layer, and continuous drift remediation where agents detect, propose, and apply fixes with human approval at high-risk boundaries.
+
+The teams that win will be the ones that stop building portals for humans and start building platforms for agents — while keeping humans firmly in the approval loop.`,
+  },
+  {
+    slug: "github-copilot-coding-agent-new-developer-loop",
+    title: "The New Developer Loop: GitHub Copilot Coding Agent in Practice",
+    excerpt:
+      "You open an issue before lunch. By the time you're back, there's a pull request waiting. Model pickers, self-review, custom agents, and CLI handoff — here's what actually shipped and how to use it.",
+    category: "Technology",
+    date: "2026-03-01",
+    readTime: "10 min",
+    featured: true,
+    tags: ["GitHub Copilot", "Agentic Coding", "Developer Productivity"],
+    content: `Something fundamental shifted in how developers work. GitHub Copilot coding agent now operates in the background — fixing bugs, adding tests, cleaning up debt — and comes back with a pull request when it's done. While you write code in your editor with Copilot in real time, the coding agent handles the work you've delegated.
+
+## The Model Picker Changes Everything
+
+The Agents panel now includes a model picker. Use a faster model for straightforward work like adding unit tests. Upgrade to a more capable model for complex refactors or integration tests with real edge cases. Leave it on auto if you'd rather not think about it.
+
+This is the first time developers have had granular control over the cost-capability trade-off in AI-assisted coding. It matters more than it sounds.
+
+## Self-Review Before You See It
+
+The painful part of reviewing agent output has always been the cleanup. Copilot coding agent now reviews its own changes using Copilot code review before opening the pull request. It gets feedback, iterates, and improves the patch. By the time you're tagged for review, someone already went through it.
+
+In one session, the agent caught that its own string concatenation was overly complex and fixed it before the PR landed. That kind of thing used to be your problem.
+
+## Custom Agents That Follow Your Process
+
+A short prompt leaves a lot to judgment. Custom agents let you codify your team's process. Create a file under .github/agents/ and define a specific approach. A performance optimizer agent can benchmark first, make the change, then measure the difference before opening a PR.
+
+## CLI Handoff — Cloud to Local and Back
+
+Start something in the cloud, finish it locally. Pull a cloud session into your terminal and you get the branch, the logs, and the full context. Press & in the CLI to push work back to the cloud. No context loss, no starting over.
+
+## What This Means for Engineering Leaders
+
+The developer loop is no longer write → test → deploy. It's delegate → review → approve. The engineers who thrive in this model are the ones who can decompose problems into clear, delegatable units and review agent output with the same rigor they'd apply to a junior engineer's PR.`,
+  },
+  {
     slug: "multi-agent-frameworks-production-guide",
     title: "Multi-Agent Frameworks: From Toy Demos to Production Systems",
     excerpt:
       "Most agentic AI demos break in production. Here's the architecture pattern that doesn't — and why orchestration matters more than intelligence.",
     category: "Technology",
-    date: "2026-03-05",
+    date: "2026-02-22",
     readTime: "10 min",
     featured: true,
-    tags: ["AI", "Multi-Agent Systems", "Architecture"],
+    tags: ["Multi-Agent Systems", "Architecture", "AI"],
     content: `The demo works perfectly. The agent reasons, calls tools, and returns a polished answer. Then you deploy it to production and everything falls apart.
 
 ## The Demo-to-Production Gap
@@ -85,116 +149,50 @@ Multi-agent architectures solve this by decomposing complex tasks into specializ
 
 ## The Orchestration Layer
 
-The most critical component in any multi-agent system isn't an agent at all. It's the orchestrator — the deterministic layer that routes tasks, manages state, enforces guardrails, and handles failures.
+The most critical component in any multi-agent system isn't an agent at all. It's the orchestrator — the deterministic layer that routes tasks, manages state, enforces guardrails, and handles failures. Think of it like a conductor. Individual musicians have specialized skills. But without coordination, you get noise instead of music.
 
-Think of it like a conductor. Individual musicians (agents) have specialized skills. But without a conductor managing tempo, dynamics, and coordination, you get noise instead of music.
-
-## Practical Architecture
-
-A production-ready multi-agent system needs four layers: an intent router that classifies incoming requests, a task planner that decomposes complex requests into subtasks, specialized agents that execute individual subtasks, and a synthesis layer that assembles results and handles conflicts.
-
-## Guardrails Are Not Optional
-
-Every agent needs input validation, output validation, and resource limits. Without guardrails, a single hallucinating agent can corrupt your entire pipeline. The organizations shipping reliable agentic AI are the ones that treat guardrails as first-class architecture, not an afterthought.
-
-## Getting Started
-
-Start with two agents and one orchestrator. Get the orchestration pattern right before adding complexity. The organizations that scale agentic AI successfully are the ones that invest in the boring infrastructure — logging, monitoring, rollback — before they invest in the exciting capabilities.`,
-  },
-  {
-    slug: "why-platform-engineering-is-the-new-devops",
-    title: "Why Platform Engineering Is the New DevOps",
-    excerpt:
-      "DevOps gave us culture. Platform engineering gives us leverage. Here's why the shift matters and how to navigate it without losing what DevOps taught us.",
-    category: "Technology",
-    date: "2026-02-28",
-    readTime: "8 min",
-    featured: true,
-    tags: ["Platform Engineering", "DevOps", "SDLC"],
-    content: `The conversation has shifted. After a decade of "you build it, you run it," engineering organizations are discovering that DevOps without platforms creates a different kind of bottleneck — cognitive overload.
-
-Platform engineering isn't a rejection of DevOps. It's the natural evolution. Where DevOps broke down silos between development and operations, platform engineering builds the golden paths that make those unified workflows sustainable at scale.
-
-## The Cognitive Load Problem
-
-Every tool you add to a developer's workflow is a tax on their attention. Kubernetes, service meshes, observability stacks, CI/CD pipelines, security scanning — the modern developer is expected to be an expert in all of them. That's not empowerment. That's exhaustion.
-
-Internal developer platforms solve this by abstracting complexity behind self-service interfaces. Developers get the autonomy DevOps promised, without needing a PhD in infrastructure.
-
-## What Good Platforms Look Like
-
-The best internal developer platforms share three qualities: they're opinionated but not rigid, they're self-service but not unsupported, and they measure success by developer satisfaction — not just deployment frequency.
-
-Golden paths should feel like guardrails, not gates. When a developer can go from idea to production in under an hour without filing a ticket, you've built something worth maintaining.
-
-## The Organizational Shift
-
-Platform engineering requires a fundamental change in how we think about infrastructure teams. They're no longer service providers responding to tickets. They're product teams building for internal customers.
-
-This means user research, roadmaps, SLAs, and — critically — the ability to say no. A platform that tries to serve every edge case serves no one well.
-
-## Getting Started
-
-Start small. Pick the most painful workflow in your organization and build a golden path for it. Measure the before and after. Let the results make the case for investment.`,
-  },
-  {
-    slug: "finops-engineering-decisions-business-outcomes",
-    title: "FinOps: Connecting Engineering Decisions to Business Outcomes",
-    excerpt:
-      "Cloud costs are engineering decisions wearing a finance hat. Here's how FinOps bridges the gap between what engineers build and what the business pays.",
-    category: "Technology",
-    date: "2026-02-20",
-    readTime: "7 min",
-    featured: true,
-    tags: ["FinOps", "Cloud", "Strategy"],
-    content: `Every architecture decision is a financial decision. That Kubernetes cluster running at 15% utilization? That's not a technical problem — it's a business problem wearing a technical disguise.
-
-## The FinOps Mindset
-
-FinOps isn't about cutting costs. It's about making informed trade-offs. Sometimes the right decision is to spend more — on reserved instances, on better tooling, on faster infrastructure. The key is making that decision intentionally, with visibility into the trade-offs.
-
-## Three Pillars
-
-Effective FinOps operates on three pillars: inform (visibility into who's spending what and why), optimize (right-sizing, reserved capacity, waste elimination), and operate (embedding cost awareness into engineering culture and workflows).
-
-Most organizations start with optimize because the savings are immediate. But the organizations that sustain FinOps success start with inform — because you can't optimize what you can't see.
-
-## Unit Economics Matter
-
-The most powerful FinOps metric isn't total cloud spend. It's cost per transaction, cost per user, or cost per feature. Unit economics connect engineering decisions to business outcomes in a language that executives understand and engineers can act on.
-
-## Cultural Shift
-
-FinOps fails when it's positioned as a finance initiative imposed on engineering. It succeeds when engineers see cost as another dimension of quality — alongside performance, reliability, and security. The best FinOps practitioners I've worked with are engineers who learned to speak finance, not finance people who learned to read AWS bills.`,
-  },
-  {
-    slug: "agent-harnesses-controlling-ai-2026",
-    title: "Agent Harnesses: Why 2026 Is About Controlling AI, Not Building More",
-    excerpt:
-      "Enterprises average 12 AI agents with only 27% connected. The real challenge isn't building agents — it's the harness that governs them.",
-    category: "Technology",
-    date: "2026-02-15",
-    readTime: "9 min",
-    tags: ["AI", "Multi-Agent Systems", "Governance"],
-    content: `The agent gold rush is over. Every team has built at least one. Most enterprises now have a dozen or more, each solving a narrow problem brilliantly and creating a broader problem silently — fragmentation.
+Claude Code demonstrated this with agent teams: a supervisor agent coordinating specialized subagents, achieving 80.8% on SWE-bench. The architecture matters more than the model.
 
 ## The Harness Pattern
 
-An agent harness is the infrastructure layer that sits between your agents and your business. It handles authentication, rate limiting, logging, cost tracking, and — most critically — the ability to shut things down when they go wrong.
+A production-grade agent harness provides five capabilities: centralized configuration, unified observability, cost attribution (know which agent is spending what), circuit breakers (automatically disable misbehaving agents), and audit trails.
 
-Think of it as the difference between having twelve independent contractors and having twelve employees with a manager. The work might be similar, but the coordination, accountability, and governance are fundamentally different.
+Gartner forecasts that by end of 2026, 40% of enterprise applications will incorporate task-specific AI agents — up from less than 5% in 2024. The organizations shipping reliable agentic AI are the ones that treat the harness as first-class architecture.
 
-## What a Good Harness Provides
+## Start With Two Agents
 
-A production-grade agent harness provides five capabilities: centralized configuration (change agent behavior without redeploying), unified observability (see what every agent is doing in one place), cost attribution (know which agent is spending what), circuit breakers (automatically disable misbehaving agents), and audit trails (prove what happened and why).
+Start with two agents and one orchestrator. Get the orchestration pattern right before adding complexity. Invest in the boring infrastructure — logging, monitoring, rollback — before the exciting capabilities.`,
+  },
+  {
+    slug: "agentic-sdlc-beyond-copilot",
+    title: "The Agentic SDLC: Beyond Copilot, Beyond Code Completion",
+    excerpt:
+      "In 2026, agentic AI doesn't just help write code — it runs first drafts of the entire SDLC. Engineers are evolving from writers to orchestrators.",
+    category: "Technology",
+    date: "2026-02-15",
+    readTime: "9 min",
+    tags: ["Agentic AI", "SDLC", "Developer Productivity"],
+    content: `Something fundamental shifted in software development during 2025. For the first time, AI agents moved beyond helpful assistants to autonomous collaborators capable of shipping real features. In 2026, the systemic effects are reconfiguring the entire software development lifecycle.
 
-## The Organizational Model
+## From Code Completion to Task Completion
 
-The teams that get agentic AI right are treating it like platform engineering — building shared infrastructure that individual teams consume. The alternative — every team building their own agent infrastructure — leads to the same fragmentation that DevOps was supposed to solve.
+The evolution happened in three stages. First, autocomplete — predicting the next line. Then, agent mode — understanding intent and editing across files. Now, autonomous agents — receiving an issue, analyzing the codebase, implementing the change, running tests, and opening a pull request.
 
-## Start With Governance
+GitHub Copilot coding agent for Jira exemplifies this: assign a Jira issue to Copilot, get an AI-generated draft PR. GitHub Agentic Workflows takes it further — describe in natural language some process you want, and Copilot creates the underlying automation.
 
-Before you build your thirteenth agent, build the harness for the twelve you already have. The compound value of governance infrastructure far exceeds the marginal value of one more agent.`,
+## The New Role of the Engineer
+
+Engineers aren't being replaced. They're evolving into strategic orchestrators who design systems while autonomous agents handle implementation. The most valuable skill is no longer writing code — it's decomposing problems into clear, delegatable units with unambiguous acceptance criteria.
+
+## Intent-Based Automation
+
+The shift from imperative to declarative is happening at the workflow level. Instead of writing CI/CD pipelines, you describe the outcome. Instead of configuring infrastructure, you state the architecture intent. Agents handle the translation.
+
+## What This Means for Organizations
+
+Engineering leaders need to rethink how they measure productivity. Lines of code and commit frequency become meaningless when agents generate most of the code. What matters is: time from issue to merged PR, quality of agent-generated output, and the ratio of human review time to agent work time.
+
+The organizations that adapt fastest will be the ones that treat agentic tooling as a platform investment, not a developer perk.`,
   },
   {
     slug: "system-design-interviews-staff-plus",
@@ -213,15 +211,19 @@ Senior system design interviews evaluate whether you can build a working system.
 
 ## What Interviewers Actually Look For
 
-At Staff+ level, interviewers are evaluating three things: trade-off articulation (can you explain why you chose X over Y, and under what conditions you'd reverse that decision?), scope management (can you identify what to build now vs. later, and defend that boundary?), and cross-cutting concerns (do you proactively address observability, security, cost, and operational complexity?).
+At Staff+ level, interviewers evaluate four dimensions: business context awareness (why this system exists and what constraints the business imposes), trade-off articulation (not just what you chose, but what you rejected and why), failure mode thinking (how the system degrades gracefully under stress), and evolution planning (how the architecture adapts as requirements change).
+
+## The AI-Era Twist
+
+System design interviews in 2026 increasingly include AI components. You might be asked to design a RAG pipeline, an agent orchestration system, or a real-time inference platform. The fundamentals haven't changed — distributed systems are distributed systems — but the vocabulary has expanded.
 
 ## The Framework
 
-I teach a four-phase approach: clarify (spend 5 minutes understanding the business context, not just the technical requirements), design (build the system in layers, starting with the data model), evaluate (proactively identify weaknesses and propose mitigations), and extend (show how the system evolves as requirements change).
+I teach a four-phase approach: clarify (spend 5 minutes understanding the business context), design (build in layers starting with the data model), evaluate (proactively identify weaknesses and propose mitigations), and extend (show how the system evolves as requirements change).
 
 ## Common Mistakes
 
-The most common mistake is jumping to implementation details before establishing the design's strategic intent. The second most common is treating non-functional requirements as an afterthought. At Staff+ level, reliability, observability, and cost are first-class design constraints — not things you mention at the end if there's time.`,
+The most common mistake is jumping to implementation details before establishing strategic intent. The second is treating non-functional requirements as an afterthought. At Staff+ level, reliability, observability, and cost are first-class design constraints — not things you mention at the end if there's time.`,
   },
   {
     slug: "the-case-for-walking-meetings",
@@ -249,33 +251,35 @@ Beyond better ideas and better conversations, walking meetings have forced me to
 My Yosemite trips taught me this: the best thinking happens when your body is moving and your mind is free. The office version of that insight is a walking meeting.`,
   },
   {
-    slug: "building-a-second-brain-for-strategy",
-    title: "Building a Second Brain for Strategic Thinking",
+    slug: "finops-ai-spend-platform-engineering",
+    title: "Why FinOps Belongs Inside Platform Engineering",
     excerpt:
-      "How I use a personal knowledge management system to connect ideas across domains and develop better strategic frameworks.",
-    category: "Strategy",
+      "98% of FinOps practitioners now manage AI spend. GPU costs are the new frontier. Here's why cost governance must be a platform capability, not a finance dashboard.",
+    category: "Technology",
     date: "2026-01-28",
-    readTime: "6 min",
-    tags: ["Strategy", "Knowledge Management", "Productivity"],
-    content: `The best strategic insights come from connecting ideas across domains. A framework from biology applied to organizational design. A principle from architecture applied to software systems. A lesson from history applied to market strategy.
+    readTime: "8 min",
+    tags: ["FinOps", "Platform Engineering", "AI Costs"],
+    content: `Every architecture decision is a financial decision. That Kubernetes cluster running at 15% utilization? That's not a technical problem — it's a business problem wearing a technical disguise. And with AI workloads, the stakes are exponentially higher.
 
-## The System
+## The AI Cost Explosion
 
-I use a simple but disciplined system: capture, connect, create. Every article I read, conversation I have, and observation I make gets captured in a structured note. Weekly, I review recent captures and draw connections. Monthly, I synthesize connections into frameworks.
+Training GPT-style models can cost $5M+. A Reddit thread that went viral last month claimed 70% of AI agents in production are ROI-negative. Whether or not that number is precise, the directional truth is clear: AI spend is growing faster than AI value in most organizations.
 
-## Why It Works
+The 2026 State of FinOps report confirms the shift: 98% of FinOps practitioners now manage AI spend, up from 31% two years ago. FinOps teams are gaining clout as AI costs climb, and the discipline is shifting "left and up" — proactive, executive-aligned technology value governance.
 
-Strategic thinking isn't about having more information. It's about having better connections between the information you already have. A second brain externalizes those connections, making them visible and combinable in ways that pure memory can't achieve.
+## Why It Belongs in the Platform
 
-## The Tools
+FinOps fails when it's a separate dashboard that engineers never check. It succeeds when cost awareness is embedded in the developer workflow — the same workflow that platform engineering owns.
 
-The specific tool matters less than the practice. I use Obsidian for its graph view and local-first philosophy, but the system would work with any tool that supports linking and tagging. The key features are: bidirectional links, full-text search, and zero friction capture.
+Platform teams should embed three things: cost attribution at the agent level (which agent is spending what), GPU utilization monitoring as a first-class metric, and spend guardrails that trigger before budgets are exceeded, not after.
 
-## The Compound Effect
+## Unit Economics for AI
 
-After two years of consistent practice, my second brain contains over 3,000 interconnected notes. The value isn't in any individual note — it's in the network. When I'm working on a client engagement, I can surface relevant insights from completely unrelated domains in seconds.
+The most powerful FinOps metric isn't total cloud spend. It's cost per inference, cost per agent task, or cost per resolved issue. Unit economics connect engineering decisions to business outcomes in a language that executives understand and engineers can act on.
 
-This is the real promise of personal knowledge management: not better memory, but better thinking.`,
+## The Cultural Shift
+
+FinOps succeeds when engineers see cost as another dimension of quality — alongside performance, reliability, and security. The best FinOps practitioners are engineers who learned to speak finance, not finance people who learned to read AWS bills.`,
   },
   {
     slug: "consumer-ai-products-that-matter-2026",

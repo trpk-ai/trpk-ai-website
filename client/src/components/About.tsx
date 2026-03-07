@@ -1,8 +1,9 @@
 /*
  * DESIGN: Granite Terminal — About
- * Business-value focused. No job title. Two short punchy paragraphs.
+ * Business-value focused. No job title. No role mention.
+ * Two punchy paragraphs about what I do and the value I deliver.
  * Asymmetric layout with Yosemite image. Teal circuit accents.
- * Credential tags in terminal-style pills.
+ * Credential tags in terminal-style pills — updated for agentic era.
  */
 
 export default function About() {
@@ -18,23 +19,27 @@ export default function About() {
             <p className="terminal-label mb-4 sm:mb-6 fade-up">// about</p>
 
             <h2 className="fade-up fade-up-delay-1">
-              I help engineering teams{" "}
-              <span className="gradient-text">deliver business value</span>{" "}
-              through technology transformation.
+              I help engineering organizations{" "}
+              <span className="gradient-text">ship AI that works</span>{" "}
+              and platforms agents can reason over.
             </h2>
 
             <div className="mt-6 sm:mt-10 space-y-5 sm:space-y-6 fade-up fade-up-delay-2">
               <p className="text-[0.9375rem] sm:text-base lg:text-[1.0625rem] leading-[1.8]">
                 Most organizations are drowning in AI pilots that never reach
-                production, platforms that create more friction than they remove,
-                and cloud bills that grow faster than revenue. I fix that.
+                production, agents that cost more than they save, and platforms
+                built for humans when the next consumer is an AI agent. I fix
+                that — with architecture that scales, governance that holds, and
+                cost models that make the CFO smile.
               </p>
               <p className="text-[0.9375rem] sm:text-base lg:text-[1.0625rem] leading-[1.8]">
-                My approach is grounded in real-world engineering leadership —
-                shipping multi-agent systems, designing internal developer
-                platforms, and building FinOps practices that connect engineering
-                decisions to business outcomes. No frameworks for the sake of
-                frameworks. Just clarity, execution, and measurable results.
+                My work sits at the intersection of agentic AI systems, platform
+                engineering for the agent era, and the financial discipline to
+                make it all sustainable. I've helped teams deploy multi-agent
+                orchestration in production, redesign developer workflows around
+                GitHub Copilot coding agent and Claude Code, and embed FinOps
+                into platform layers where GPU spend and agent costs are governed
+                by default — not discovered in a monthly bill.
               </p>
               <p className="text-[0.9375rem] sm:text-base lg:text-[1.0625rem] leading-[1.8] text-[oklch(0.5_0.01_260)]">
                 I find my best thinking on the granite trails of Yosemite. The
@@ -47,10 +52,11 @@ export default function About() {
             <div className="mt-8 sm:mt-10 flex flex-wrap gap-2 fade-up fade-up-delay-3">
               {[
                 "Multi-Agent Systems",
-                "Platform Engineering",
-                "FinOps",
                 "GitHub Copilot",
-                "SDLC Optimization",
+                "Platform Engineering",
+                "Agentic SDLC",
+                "FinOps",
+                "Claude Code",
                 "FinOps X Speaker",
               ].map((tag) => (
                 <span key={tag} className="tag-pill">

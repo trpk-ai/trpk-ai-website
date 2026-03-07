@@ -22,7 +22,7 @@ export default function Footer() {
               trpk.ai
             </Link>
             <p className="mt-3 text-[0.75rem] font-mono text-[oklch(0.45_0.005_85)] tracking-wider">
-              AI · Platform Engineering · FinOps
+              AI Transformation · Platform Engineering · Agentic Systems
             </p>
           </div>
 
@@ -68,7 +68,7 @@ export default function Footer() {
         {/* Bottom */}
         <div className="mt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <p className="text-[0.6875rem] font-mono text-[oklch(0.4_0.005_85)] tracking-wider">
-            © {currentYear} trpk.ai — All rights reserved
+            &copy; {currentYear} trpk.ai &mdash; All rights reserved
           </p>
           <div className="flex items-center gap-4">
             <a

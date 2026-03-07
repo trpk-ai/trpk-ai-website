@@ -33,7 +33,7 @@ export default function Writing() {
                 className="inline-flex items-center gap-2 mt-6 sm:mt-8 text-sm font-mono font-medium text-[oklch(0.65_0.12_190)] hover:text-[oklch(0.72_0.12_190)] transition-colors duration-300 fade-up fade-up-delay-3"
               >
                 View all articles
-                <span className="text-base">→</span>
+                <span className="text-base">&rarr;</span>
               </Link>
             </div>
           </div>
