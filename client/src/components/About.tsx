@@ -73,9 +73,9 @@ export default function About() {
           <div className="lg:col-span-5 order-1 lg:order-2 fade-up fade-up-delay-2">
             <div className="relative">
               <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663340106296/SC4N3PtoqtKXuEYmdpeXhv/about-section-cgDE4bznwD2PHacj4KmDq7.webp"
-                alt="Yosemite granite rock face — resilience and growth"
-                className="w-full aspect-[16/10] sm:aspect-[4/3] lg:aspect-[4/5] object-cover rounded-sm"
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663340106296/SC4N3PtoqtKXuEYmdpeXhv/portrait-final_01a1c3dc.png"
+                alt="Pavan Tallapragada — Platform Engineering & AI Thought Leader"
+                className="w-full aspect-[1/1] object-cover object-top rounded-sm bg-[oklch(0.96_0.005_85)]"
                 loading="lazy"
               />
               {/* Teal accent line under image */}
