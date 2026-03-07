@@ -27,7 +27,7 @@ export default function Hero() {
         <div className="max-w-3xl">
           {/* Thesis label */}
           <p className="terminal-label mb-4 sm:mb-6 fade-up">
-            Platform Engineering · Agentic AI · Engineering Leadership
+            Platform Engineering · Agentic AI · Biohacking · Systems Thinking
           </p>
 
           {/* Thesis statement */}
@@ -38,8 +38,8 @@ export default function Hero() {
 
           {/* Credibility line */}
           <p className="mt-4 sm:mt-7 text-[0.875rem] sm:text-base lg:text-[1.0625rem] leading-relaxed max-w-xl text-[oklch(0.38_0.01_260)] fade-up fade-up-delay-2">
-            Former CTO and senior engineering leader. Now writing about what
-            comes next at the intersection of AI and platform engineering.
+            I think in systems. I write about the ones that matter — from
+            agentic AI to what we put in our bodies.
           </p>
 
           {/* CTAs */}

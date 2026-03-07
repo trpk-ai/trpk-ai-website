@@ -45,9 +45,10 @@ export default function About() {
                 on. The rest will automate chaos.
               </p>
               <p className="text-[0.9375rem] sm:text-base lg:text-[1.0625rem] leading-[1.8] text-[oklch(0.5_0.01_260)] italic">
-                I find my clearest thinking on the granite trails of Yosemite.
-                The same patience that shapes mountains shapes great engineering
-                cultures.
+                I think in systems — whether it's platform architecture,
+                human biology, or the food we eat. I find my clearest thinking
+                on the granite trails of Yosemite. The same patience that
+                shapes mountains shapes great engineering cultures.
               </p>
             </div>
 
@@ -55,12 +56,12 @@ export default function About() {
             <div className="mt-8 sm:mt-10 flex flex-wrap gap-2 fade-up fade-up-delay-3">
               {[
                 "Former CTO",
-                "Senior Engineering Leader",
                 "15+ Years Building Platforms",
                 "FinOps X Speaker",
                 "Multi-Agent Architecture",
                 "GitHub & AI Toolchain",
-                "Cloud Transformation",
+                "Biohacker",
+                "Systems Thinker",
               ].map((tag) => (
                 <span key={tag} className="tag-pill">
                   {tag}

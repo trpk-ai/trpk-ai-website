@@ -42,9 +42,9 @@ export default function Connect() {
         </h2>
 
         <p className="mt-4 sm:mt-6 text-[0.9375rem] sm:text-base leading-[1.8] text-[oklch(0.7_0.005_85)] max-w-lg mx-auto fade-up fade-up-delay-2">
-          Weekly perspectives on platform engineering, agentic AI, and
-          engineering leadership — from someone who's built it for 15 years,
-          not just studied it. No spam. Unsubscribe anytime.
+          Weekly perspectives on agentic AI, platform engineering, biohacking,
+          and the systems that shape how we build and live — from someone who’s
+          built for 15 years, not just studied it. No spam. Unsubscribe anytime.
         </p>
 
         {/* Newsletter form */}

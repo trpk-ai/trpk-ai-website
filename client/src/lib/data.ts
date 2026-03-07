@@ -239,10 +239,10 @@ The most common mistake is jumping to implementation details before establishing
     title: "The Case for Walking Meetings",
     excerpt:
       "How replacing conference rooms with granite trails changed my thinking, my health, and the quality of my conversations.",
-    category: "Health",
+    category: "Biohacking",
     date: "2026-02-05",
     readTime: "5 min",
-    tags: ["Health", "Productivity", "Leadership"],
+    tags: ["Biohacking", "Productivity", "Leadership"],
     content: `Three years ago, I started taking meetings on foot. Not all of them — just the ones that involve brainstorming, difficult conversations, or strategic thinking. The results have been remarkable.
 
 ## The Science
@@ -295,7 +295,7 @@ FinOps succeeds when engineers see cost as another dimension of quality — alon
     title: "Consumer AI Products That Will Actually Matter in 2026",
     excerpt:
       "Cutting through the hype to identify the AI products that will genuinely change how we live and work this year.",
-    category: "Consumer Products",
+    category: "Technology",
     date: "2026-01-20",
     readTime: "7 min",
     tags: ["AI", "Consumer Tech", "Predictions"],
@@ -317,14 +317,108 @@ The most interesting consumer AI products are the ones that run locally. On-devi
 
 The intersection of AI and hardware is where the most interesting consumer products will emerge. Devices designed from the ground up for AI interaction — not smartphones with AI bolted on — will define the next computing paradigm.`,
   },
+  {
+    slug: "cold-exposure-protocol-engineers",
+    title: "My Cold Exposure Protocol: Engineering Recovery Like a System",
+    excerpt:
+      "I treat my body like a distributed system. Cold exposure is my circuit breaker — here's the protocol I've refined over two years and the data behind it.",
+    category: "Biohacking",
+    date: "2026-01-15",
+    readTime: "6 min",
+    tags: ["Biohacking", "Cold Exposure", "Recovery"],
+    content: `Engineers optimize systems for a living. Most of us forget to optimize the most important system we operate — our own biology.
+
+Two years ago, I started treating my body like a distributed system. Sleep is the garbage collector. Nutrition is the fuel pipeline. And cold exposure is my circuit breaker — the thing that resets the system when everything else is degraded.
+
+## The Protocol
+
+I follow a progressive cold exposure protocol: 2-3 minutes at 50°F (10°C) water, 3-4 times per week. I started at 60°F for 30 seconds and worked up over six months. The key is consistency, not heroics.
+
+## The Data
+
+I track HRV (heart rate variability), sleep quality, and subjective energy levels. After six months of consistent cold exposure, my average HRV increased 18%, deep sleep improved by 22 minutes per night, and my afternoon energy crashes disappeared almost entirely.
+
+## The Systems Thinking Connection
+
+Cold exposure works because it triggers hormesis — a controlled stressor that forces adaptation. It's the biological equivalent of chaos engineering. You introduce a controlled failure to build resilience. The same principle that makes distributed systems antifragile makes human biology stronger.
+
+## Why Engineers Should Care
+
+We spend our careers building systems that handle stress gracefully. Cold exposure teaches your nervous system to do the same thing. The calm you develop standing in cold water transfers directly to the calm you need when production is on fire at 2 AM.`,
+  },
+  {
+    slug: "fermentation-as-systems-thinking",
+    title: "What Fermentation Taught Me About Building Resilient Systems",
+    excerpt:
+      "Sourdough, kimchi, and kombucha are distributed systems with no central coordinator. The parallels to platform engineering are uncanny.",
+    category: "Food",
+    date: "2026-01-08",
+    readTime: "7 min",
+    tags: ["Food", "Fermentation", "Systems Thinking"],
+    content: `I started fermenting food during the pandemic. What began as a sourdough hobby turned into an unexpected lesson in distributed systems design.
+
+## Sourdough Is a Distributed System
+
+A sourdough starter is a microbial community with no central coordinator. Hundreds of species of bacteria and yeast compete, cooperate, and self-regulate to produce a stable, resilient ecosystem. There's no orchestrator. There's no single point of failure. The system is antifragile — it gets stronger with perturbation.
+
+Sound familiar? It should. It's the same architecture pattern we aspire to in platform engineering.
+
+## Kimchi and Eventual Consistency
+
+Kimchi fermentation is eventually consistent. You combine the ingredients, set the initial conditions, and then the system converges to a stable state over time. The exact path is non-deterministic — temperature, salt concentration, and microbial composition all influence the outcome — but the end state is reliably delicious.
+
+This is exactly how eventually consistent distributed databases work. You set the initial state, accept that replicas will diverge temporarily, and trust that the system will converge.
+
+## The Lesson
+
+The best systems — biological or digital — are the ones that don't need constant intervention. They're designed with the right initial conditions, the right constraints, and then left to self-organize. Platform engineering is moving in this direction: define the guardrails, let agents operate within them, and trust the system.
+
+## My Current Ferments
+
+I'm currently maintaining a 3-year-old sourdough starter, rotating batches of kimchi and sauerkraut, and experimenting with water kefir. Each one teaches me something about patience, observation, and the beauty of systems that run themselves.`,
+  },
+  {
+    slug: "yosemite-thinking-trails",
+    title: "Yosemite's Thinking Trails: Where My Best Ideas Come From",
+    excerpt:
+      "The granite walls of Yosemite have shaped more of my engineering philosophy than any conference talk. Here are the trails that changed how I think.",
+    category: "Travel",
+    date: "2026-01-01",
+    readTime: "8 min",
+    tags: ["Travel", "Yosemite", "Thinking"],
+    content: `Every major decision I've made in the last five years — leaving a CTO role, joining Microsoft, rethinking my approach to platform engineering — was made on a trail in Yosemite.
+
+## The Mist Trail
+
+The Mist Trail to Vernal Fall is where I do my problem-solving. It's steep enough to demand physical attention, which quiets the analytical mind and lets the subconscious work. By the time I reach the top, the answer is usually waiting.
+
+The trail teaches a lesson about engineering: the direct path is often the hardest, but it's also the most honest. There are no shortcuts to Vernal Fall, and there are no shortcuts to building reliable systems.
+
+## The Valley Floor Loop
+
+The Valley Floor Loop is my systems thinking trail. It's flat, long, and gives you a panoramic view of the entire valley. You see how everything connects — the river, the meadows, the granite walls, the waterfalls. It's the architectural overview that's impossible to get from any single viewpoint.
+
+I walk this trail when I need to think about organizational design or platform architecture. The lesson is always the same: zoom out before you zoom in.
+
+## Half Dome
+
+Half Dome is the trail I save for career-defining decisions. It's a full-day commitment — 14 miles, 4,800 feet of elevation gain, and a cable section that demands complete presence. You can't think about anything else when you're on those cables.
+
+The lesson from Half Dome is about commitment. Once you're on the cables, you're committed. There's no partial ascent. The same is true for the biggest decisions in your career — half-measures don't work.
+
+## Why Nature Matters for Technologists
+
+We spend our careers building digital systems. Nature reminds us that the most resilient, elegant, and enduring systems were designed by evolution over millions of years. Granite doesn't move fast and break things. It endures. The best platforms should aspire to the same.`,
+  },
 ];
 
 export const categories = [
   "All",
   "Technology",
   "Strategy",
-  "Health",
-  "Consumer Products",
+  "Biohacking",
+  "Food",
+  "Travel",
 ];
 
 export function formatDate(dateString: string): string {

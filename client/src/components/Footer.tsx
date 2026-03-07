@@ -22,7 +22,7 @@ export default function Footer() {
               trpk.ai
             </Link>
             <p className="mt-2 text-[0.6875rem] font-mono text-[oklch(0.45_0.005_85)] tracking-wide max-w-xs">
-              Platform Engineering · Agentic AI · Engineering Leadership
+              Systems thinking across technology, health, and culture
             </p>
           </div>
 

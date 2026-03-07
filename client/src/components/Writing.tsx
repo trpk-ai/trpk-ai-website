@@ -26,9 +26,9 @@ export default function Writing() {
                 not just observing.
               </h2>
               <p className="mt-4 sm:mt-6 text-[0.875rem] sm:text-[0.9375rem] leading-[1.75] text-[oklch(0.5_0.01_260)] fade-up fade-up-delay-2">
-                On platform engineering, agentic AI, engineering leadership,
-                and the products shaping how we live and work. Perspectives
-                from 15 years of building — not from the sidelines.
+                On agentic AI, platform engineering, biohacking, food,
+                travel, and the systems that shape how we build and live.
+                Perspectives from 15 years of building — not from the sidelines.
               </p>
               <Link
                 href="/blog"
