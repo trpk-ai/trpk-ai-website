@@ -2,48 +2,48 @@
  * DESIGN: Granite Terminal — Hero (Thought Leadership)
  * Full-viewport hero with Yosemite panorama background.
  * Thesis statement as headline — worldview, not service pitch.
- * Primary CTA: Read my latest. Secondary: Work with me.
+ * MOBILE FIX: Reduced height, centered content, no dead whitespace.
  */
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[100svh] flex items-end overflow-hidden">
+    <section className="relative min-h-[75svh] sm:min-h-[85svh] lg:min-h-[100svh] flex items-center sm:items-end overflow-hidden">
       {/* Background image */}
       <div className="absolute inset-0">
         <img
           src="https://d2xsxph8kpxj0f.cloudfront.net/310519663340106296/SC4N3PtoqtKXuEYmdpeXhv/hero-yosemite-JyGpXqGZ99Y98gSPgqzrCT.webp"
           alt="Yosemite Valley panorama — granite cliffs, morning mist, ancient forests"
-          className="w-full h-full object-cover object-[center_30%]"
+          className="w-full h-full object-cover object-[center_40%] sm:object-[center_30%]"
           loading="eager"
           fetchPriority="high"
         />
         {/* Gradient overlay — bottom heavy for text legibility */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[oklch(0.98_0.005_85)] via-[oklch(0.98_0.005_85/0.7)] via-45% to-[oklch(0.98_0.005_85/0.08)]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[oklch(0.98_0.005_85)] via-[oklch(0.98_0.005_85/0.75)] via-40% to-[oklch(0.98_0.005_85/0.15)]" />
         {/* Dot grid overlay for tech texture */}
         <div className="absolute inset-0 dot-grid opacity-25" />
       </div>
 
-      <div className="relative z-10 max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-12 pb-14 sm:pb-20 lg:pb-28 pt-24 w-full">
+      <div className="relative z-10 max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-12 pb-10 sm:pb-20 lg:pb-28 pt-20 sm:pt-24 w-full">
         <div className="max-w-3xl">
-          {/* Thesis label — not a service list */}
-          <p className="terminal-label mb-5 sm:mb-6 fade-up">
+          {/* Thesis label */}
+          <p className="terminal-label mb-4 sm:mb-6 fade-up">
             Platform Engineering · Agentic AI · Engineering Leadership
           </p>
 
-          {/* Thesis statement — worldview, not pitch */}
+          {/* Thesis statement */}
           <h1 className="fade-up fade-up-delay-1">
-            I spent a decade building platforms for developers.{" "}
+            I spent 15 years building platforms.{" "}
             <span className="gradient-text">Now agents are the developer.</span>
           </h1>
 
-          {/* Credibility line — operator, not consultant */}
-          <p className="mt-5 sm:mt-7 text-[0.9375rem] sm:text-base lg:text-[1.0625rem] leading-relaxed max-w-xl text-[oklch(0.38_0.01_260)] fade-up fade-up-delay-2">
-            15 years building platforms, scaling engineering orgs, and leading
-            cloud transformations. Writing about what comes next.
+          {/* Credibility line */}
+          <p className="mt-4 sm:mt-7 text-[0.875rem] sm:text-base lg:text-[1.0625rem] leading-relaxed max-w-xl text-[oklch(0.38_0.01_260)] fade-up fade-up-delay-2">
+            Former CTO and senior engineering leader. Now writing about what
+            comes next at the intersection of AI and platform engineering.
           </p>
 
-          {/* CTAs — Ideas first, engagement second */}
-          <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 fade-up fade-up-delay-3">
+          {/* CTAs */}
+          <div className="mt-6 sm:mt-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 fade-up fade-up-delay-3">
             <button
               onClick={() =>
                 document

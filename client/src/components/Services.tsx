@@ -1,7 +1,7 @@
 /*
  * DESIGN: Granite Terminal — Ways to Engage (replaces Services)
- * 4 engagement types in editorial grid. Not a service menu — ways to
- * interact with the thinking. Advisory, Coaching, Interview Prep, Speaking.
+ * 3 engagement types in editorial grid. Not a service menu — ways to
+ * interact with the thinking. Advisory, Coaching & Interview Prep, Speaking.
  * Teal number accents. Dot-grid hover. Terminal labels.
  */
 import { engagements } from "@/lib/data";
@@ -29,11 +29,11 @@ export default function Services() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 lg:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5 lg:gap-6">
           {engagements.map((eng, i) => (
             <article
               key={eng.number}
-              className={`fade-up fade-up-delay-${Math.min(i + 1, 4)} group relative bg-[oklch(0.99_0.003_85)] border border-[oklch(0.91_0.008_260)] rounded-sm p-6 sm:p-8 lg:p-10 transition-all duration-500 glow-teal-hover hover:border-[oklch(0.65_0.12_190/0.2)]`}
+              className={`fade-up fade-up-delay-${Math.min(i + 1, 3)} group relative bg-[oklch(0.99_0.003_85)] border border-[oklch(0.91_0.008_260)] rounded-sm p-6 sm:p-8 lg:p-10 transition-all duration-500 glow-teal-hover hover:border-[oklch(0.65_0.12_190/0.2)]`}
             >
               {/* Number accent + tagline */}
               <div className="flex items-start justify-between mb-4 sm:mb-5">

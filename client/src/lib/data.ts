@@ -21,10 +21,10 @@ export interface Engagement {
 export const engagements: Engagement[] = [
   {
     number: "01",
-    title: "Advisory & Sparring",
+    title: "Advisory",
     tagline: "For CTOs, VPs, and engineering leaders navigating the shift",
     description:
-      "You're making bets on agentic AI, platform redesign, or org-wide transformation. I've made those bets — as a CTO, as a Director, and now from inside the ecosystem shaping the tools. I help you pressure-test your strategy before you commit headcount and budget.",
+      "You're making bets on agentic AI, platform redesign, or org-wide transformation. I've made those bets — as a CTO and senior engineering leader — and now from inside the ecosystem shaping the tools. I help you pressure-test your strategy before you commit headcount and budget.",
     details: [
       "AI transformation strategy & readiness assessment",
       "Platform engineering for the agentic era",
@@ -34,36 +34,24 @@ export const engagements: Engagement[] = [
   },
   {
     number: "02",
-    title: "Executive Coaching",
-    tagline: "For engineering leaders growing into the next level",
+    title: "Executive Coaching & Interview Prep",
+    tagline: "For engineering leaders and engineers leveling up",
     description:
-      "The skills that got you to Director won't get you to VP. The skills that made you a great IC won't make you a great CTO. I coach engineering leaders through the transitions that matter — from managing teams to shaping organizations, from executing strategy to setting it.",
+      "The skills that got you to Director won't get you to VP. The system design that passes Senior interviews won't pass Staff+. I coach engineering leaders through career transitions and prepare engineers for the system design interviews that matter — teaching the architectural thinking that distinguishes Staff from Senior.",
     details: [
-      "Director → VP / VP → CTO transitions",
+      "Director → VP / VP → CTO leadership transitions",
       "Building and scaling engineering organizations",
+      "Staff+ system design interview prep (distributed systems, AI-era architecture)",
+      "Mock interviews with structured, actionable feedback",
       "Technical vision and executive communication",
-      "Leading through AI-driven transformation",
     ],
   },
   {
     number: "03",
-    title: "System Design Interview Prep",
-    tagline: "For engineers targeting Staff+, Principal, and Distinguished",
-    description:
-      "I've coached over fifty engineers through Staff+ system design interviews at top-tier companies. The pattern of failure is consistent: they design systems that work, but don't demonstrate the thinking that distinguishes Staff from Senior. I teach the thinking.",
-    details: [
-      "Large-scale distributed system design practice",
-      "Architecture trade-off analysis & decision frameworks",
-      "AI-era system design (agent orchestration, RAG, vector DBs)",
-      "Mock interviews with structured, actionable feedback",
-    ],
-  },
-  {
-    number: "04",
     title: "Speaking & Workshops",
     tagline: "For conferences, offsites, and leadership teams",
     description:
-      "I speak on the intersection of AI, platform engineering, and engineering leadership. Not vendor pitches — real perspectives shaped by building platforms for a decade and now watching the agentic revolution from inside Microsoft.",
+      "I speak on the intersection of AI, platform engineering, and engineering leadership. Not vendor pitches — real perspectives shaped by building platforms for 15 years and now watching the agentic revolution unfold from the inside.",
     details: [
       "Platform engineering in the agentic AI era",
       "The human-agent engineering partnership",

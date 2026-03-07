@@ -25,10 +25,10 @@ export default function About() {
 
             <div className="mt-6 sm:mt-10 space-y-5 sm:space-y-6 fade-up fade-up-delay-2">
               <p className="text-[0.9375rem] sm:text-base lg:text-[1.0625rem] leading-[1.8]">
-                I've been a CTO, a Director of Engineering, and a Sr. Engineering
-                Manager — building platforms, scaling organizations, and leading
-                cloud transformations across startups and enterprises for over
-                15 years. I've lived the pain of building internal developer
+                I've been a CTO and senior engineering leader — building
+                platforms, scaling organizations, and leading cloud
+                transformations across startups and enterprises for over 15
+                years. I've lived the pain of building internal developer
                 platforms, golden paths, and self-service infrastructure.
               </p>
               <p className="text-[0.9375rem] sm:text-base lg:text-[1.0625rem] leading-[1.8]">
@@ -55,11 +55,11 @@ export default function About() {
             <div className="mt-8 sm:mt-10 flex flex-wrap gap-2 fade-up fade-up-delay-3">
               {[
                 "Former CTO",
-                "Dir. of Engineering",
+                "Senior Engineering Leader",
                 "15+ Years Building Platforms",
                 "FinOps X Speaker",
                 "Multi-Agent Architecture",
-                "GitHub Copilot",
+                "GitHub & AI Toolchain",
                 "Cloud Transformation",
               ].map((tag) => (
                 <span key={tag} className="tag-pill">
