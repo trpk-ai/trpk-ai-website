@@ -1,7 +1,6 @@
 /*
- * DESIGN: Granite Editorial — Scroll to Top
- * Minimal floating button that appears after scrolling down.
- * Uses amber accent, subtle shadow, smooth animation.
+ * DESIGN: Granite Terminal — Scroll to Top
+ * Minimal floating button with teal glow on hover.
  */
 import { useState, useEffect } from "react";
 
@@ -22,7 +21,7 @@ export default function ScrollToTop() {
     <button
       onClick={scrollUp}
       aria-label="Scroll to top"
-      className={`fixed bottom-6 right-6 sm:bottom-8 sm:right-8 z-50 w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center rounded-full bg-[oklch(0.22_0.015_65)] text-[oklch(0.95_0.005_80)] shadow-lg transition-all duration-500 hover:bg-[oklch(0.3_0.015_65)] ${
+      className={`fixed bottom-6 right-6 sm:bottom-8 sm:right-8 z-50 w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center rounded-full bg-[oklch(0.18_0.01_260)] text-[oklch(0.95_0.005_85)] shadow-lg transition-all duration-500 hover:bg-[oklch(0.65_0.12_190)] ${
         visible
           ? "opacity-100 translate-y-0 pointer-events-auto"
           : "opacity-0 translate-y-4 pointer-events-none"

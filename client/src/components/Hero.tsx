@@ -1,76 +1,77 @@
 /*
- * DESIGN: Granite Editorial — Hero
- * Full-viewport with Yosemite panorama. Left-aligned text over a subtle
- * warm gradient. The image sits at the bottom, creating a natural horizon line.
- * Typography is monumental but warm. Single CTA.
- * RESPONSIVE: Stacks vertically on mobile, reduced padding, smaller type.
+ * DESIGN: Granite Terminal — Hero
+ * Full-viewport hero with Yosemite panorama background.
+ * Left-aligned text with gradient accent word. Dot-grid overlay for tech feel.
+ * Teal circuit line at bottom. Business-value focused headline.
  */
 
 export default function Hero() {
   return (
-    <section
-      id="hero"
-      className="relative min-h-[100svh] flex flex-col justify-end overflow-hidden"
-    >
-      {/* Background: warm white to transparent gradient over image */}
+    <section className="relative min-h-[100svh] flex items-end overflow-hidden">
+      {/* Background image */}
       <div className="absolute inset-0">
         <img
           src="https://d2xsxph8kpxj0f.cloudfront.net/310519663340106296/SC4N3PtoqtKXuEYmdpeXhv/hero-yosemite-JyGpXqGZ99Y98gSPgqzrCT.webp"
-          alt="Yosemite Valley at golden hour — El Capitan, Half Dome, and Bridalveil Fall"
-          className="absolute inset-0 w-full h-full object-cover object-[center_60%] sm:object-center"
+          alt="Yosemite Valley panorama — granite cliffs, morning mist, ancient forests"
+          className="w-full h-full object-cover object-[center_30%]"
           loading="eager"
           fetchPriority="high"
         />
-        {/* Gradient overlay: stronger on mobile for readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[oklch(0.985_0.005_80)] via-[oklch(0.985_0.005_80/0.75)] via-50% to-[oklch(0.985_0.005_80/0.2)] sm:via-[oklch(0.985_0.005_80/0.7)] sm:via-55% sm:to-[oklch(0.985_0.005_80/0.15)]" />
+        {/* Gradient overlay — bottom heavy for text legibility */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[oklch(0.98_0.005_85)] via-[oklch(0.98_0.005_85/0.65)] via-40% to-[oklch(0.98_0.005_85/0.1)]" />
+        {/* Dot grid overlay for tech texture */}
+        <div className="absolute inset-0 dot-grid opacity-30" />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 max-w-[1200px] mx-auto w-full px-5 sm:px-6 lg:px-12 pb-20 sm:pb-28 lg:pb-40 pt-24 sm:pt-32">
-        <div className="max-w-2xl">
-          <p className="section-label mb-4 sm:mb-6 fade-up">
-            AI & Platform Engineering
+      <div className="relative z-10 max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-12 pb-16 sm:pb-20 lg:pb-28 pt-24 w-full">
+        <div className="max-w-3xl">
+          {/* Terminal label */}
+          <p className="terminal-label mb-5 sm:mb-6 fade-up">
+            AI · Platform Engineering · FinOps
           </p>
 
-          <h1 className="fade-up fade-up-delay-1 text-[oklch(0.2_0.015_65)]">
-            Clarity through
-            <br />
-            <span className="italic text-[oklch(0.72_0.12_65)]">
-              transformation.
-            </span>
+          {/* Headline */}
+          <h1 className="fade-up fade-up-delay-1">
+            I help organizations{" "}
+            <span className="gradient-text">ship faster</span>{" "}
+            with AI, platforms, and financial clarity.
           </h1>
 
-          <p className="mt-5 sm:mt-8 text-base sm:text-lg lg:text-xl leading-relaxed text-[oklch(0.35_0.01_65)] max-w-lg fade-up fade-up-delay-2">
-            I help engineering leaders adopt AI, build platforms, and ship
-            software that moves the business forward.
+          {/* Subline */}
+          <p className="mt-5 sm:mt-7 text-[0.9375rem] sm:text-base lg:text-[1.0625rem] leading-relaxed max-w-xl text-[oklch(0.38_0.01_260)] fade-up fade-up-delay-2">
+            From multi-agent architectures to internal developer platforms to
+            FinOps — I turn complexity into competitive advantage.
           </p>
 
-          <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 fade-up fade-up-delay-3">
+          {/* CTAs */}
+          <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 fade-up fade-up-delay-3">
             <a
               href="https://calendly.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3.5 sm:py-3 bg-[oklch(0.22_0.015_65)] text-[oklch(0.97_0.005_80)] text-sm font-sans font-medium tracking-wide rounded-sm hover:bg-[oklch(0.3_0.015_65)] transition-colors duration-300"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[oklch(0.18_0.01_260)] text-[oklch(0.95_0.005_85)] text-sm font-sans font-medium tracking-wide rounded-sm hover:bg-[oklch(0.25_0.01_260)] transition-colors duration-300"
             >
               Book a Free Consultation
             </a>
             <button
               onClick={() =>
                 document
-                  .getElementById("about")
+                  .getElementById("services")
                   ?.scrollIntoView({ behavior: "smooth" })
               }
-              className="hidden sm:inline-flex text-sm font-sans text-[oklch(0.5_0.01_65)] hover:text-[oklch(0.25_0.015_65)] transition-colors duration-300"
+              className="inline-flex items-center justify-center gap-2 text-sm font-sans font-medium text-[oklch(0.45_0.01_260)] hover:text-[oklch(0.65_0.12_190)] transition-colors duration-300"
             >
-              Learn more
-              <span className="ml-1.5">&#8595;</span>
+              Explore services
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="mt-0.5">
+                <path d="M7 2v10M2 7l5 5 5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
             </button>
           </div>
         </div>
       </div>
 
-      {/* Bottom fade to white */}
-      <div className="absolute bottom-0 left-0 right-0 h-16 sm:h-24 bg-gradient-to-t from-[oklch(0.985_0.005_80)] to-transparent z-10" />
+      {/* Circuit line at bottom */}
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[oklch(0.65_0.12_190/0.3)] to-transparent" />
     </section>
   );
 }

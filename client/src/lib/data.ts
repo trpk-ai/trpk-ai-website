@@ -6,6 +6,7 @@ export interface Article {
   date: string;
   readTime: string;
   featured?: boolean;
+  tags?: string[];
   content: string;
 }
 
@@ -19,60 +20,97 @@ export interface Service {
 export const services: Service[] = [
   {
     number: "01",
-    title: "AI Transformation",
+    title: "AI Transformation & Agentic Systems",
     description:
-      "Guiding organizations from AI experimentation to enterprise-scale adoption. Strategy, architecture, and change management for teams ready to move beyond pilots.",
+      "From Copilot rollouts to multi-agentic architectures — helping organizations move past pilots into production-grade AI that compounds business value.",
     outcomes: [
-      "AI readiness assessment",
-      "Copilot rollout strategy",
-      "ROI measurement frameworks",
+      "Multi-agent framework design",
+      "Copilot enterprise strategy",
+      "AI governance & guardrails",
     ],
   },
   {
     number: "02",
     title: "Platform Engineering",
     description:
-      "Designing and scaling internal developer platforms that reduce cognitive load and accelerate delivery. From golden paths to self-service infrastructure.",
+      "Building internal developer platforms that eliminate toil, reduce cognitive load, and turn infrastructure into a competitive advantage. Golden paths, self-service, developer portals.",
     outcomes: [
-      "IDP architecture design",
+      "IDP architecture & golden paths",
       "Developer portal strategy",
-      "Platform team operating model",
+      "DORA metrics & SDLC optimization",
     ],
   },
   {
     number: "03",
-    title: "Developer Productivity",
+    title: "FinOps & Cloud Optimization",
     description:
-      "Optimizing the software development lifecycle end-to-end. Modern toolchains, workflow automation, and engineering culture that compounds velocity.",
+      "Bringing financial accountability to cloud operations. Cost visibility, allocation models, and optimization strategies that align engineering decisions with business outcomes.",
     outcomes: [
-      "SDLC modernization",
-      "GitHub Enterprise strategy",
-      "DORA metrics improvement",
+      "Cloud cost visibility frameworks",
+      "FinOps operating model design",
+      "Unit economics & showback",
     ],
   },
   {
     number: "04",
-    title: "Executive Coaching",
+    title: "System Design Interview Prep",
     description:
-      "One-on-one coaching for technology leaders navigating career transitions, interview preparation, and building executive presence in the AI era.",
+      "Intensive coaching for engineers preparing for Staff+, Principal, and Distinguished-level system design interviews at top-tier technology companies.",
     outcomes: [
-      "Interview preparation",
-      "Leadership development",
-      "Career strategy sessions",
+      "Large-scale system design practice",
+      "Architecture trade-off analysis",
+      "Mock interviews with feedback",
     ],
   },
 ];
 
 export const articles: Article[] = [
   {
+    slug: "multi-agent-frameworks-production-guide",
+    title: "Multi-Agent Frameworks: From Toy Demos to Production Systems",
+    excerpt:
+      "Most agentic AI demos break in production. Here's the architecture pattern that doesn't — and why orchestration matters more than intelligence.",
+    category: "Technology",
+    date: "2026-03-05",
+    readTime: "10 min",
+    featured: true,
+    tags: ["AI", "Multi-Agent Systems", "Architecture"],
+    content: `The demo works perfectly. The agent reasons, calls tools, and returns a polished answer. Then you deploy it to production and everything falls apart.
+
+## The Demo-to-Production Gap
+
+Single-agent demos succeed because they operate in controlled environments with predictable inputs. Production systems face adversarial inputs, concurrent users, rate limits, partial failures, and the combinatorial explosion of real-world edge cases.
+
+Multi-agent architectures solve this by decomposing complex tasks into specialized agents with clear boundaries. But the real insight isn't about having multiple agents — it's about the harness that controls them.
+
+## The Orchestration Layer
+
+The most critical component in any multi-agent system isn't an agent at all. It's the orchestrator — the deterministic layer that routes tasks, manages state, enforces guardrails, and handles failures.
+
+Think of it like a conductor. Individual musicians (agents) have specialized skills. But without a conductor managing tempo, dynamics, and coordination, you get noise instead of music.
+
+## Practical Architecture
+
+A production-ready multi-agent system needs four layers: an intent router that classifies incoming requests, a task planner that decomposes complex requests into subtasks, specialized agents that execute individual subtasks, and a synthesis layer that assembles results and handles conflicts.
+
+## Guardrails Are Not Optional
+
+Every agent needs input validation, output validation, and resource limits. Without guardrails, a single hallucinating agent can corrupt your entire pipeline. The organizations shipping reliable agentic AI are the ones that treat guardrails as first-class architecture, not an afterthought.
+
+## Getting Started
+
+Start with two agents and one orchestrator. Get the orchestration pattern right before adding complexity. The organizations that scale agentic AI successfully are the ones that invest in the boring infrastructure — logging, monitoring, rollback — before they invest in the exciting capabilities.`,
+  },
+  {
     slug: "why-platform-engineering-is-the-new-devops",
     title: "Why Platform Engineering Is the New DevOps",
     excerpt:
       "DevOps gave us culture. Platform engineering gives us leverage. Here's why the shift matters and how to navigate it without losing what DevOps taught us.",
     category: "Technology",
-    date: "2026-03-05",
+    date: "2026-02-28",
     readTime: "8 min",
     featured: true,
+    tags: ["Platform Engineering", "DevOps", "SDLC"],
     content: `The conversation has shifted. After a decade of "you build it, you run it," engineering organizations are discovering that DevOps without platforms creates a different kind of bottleneck — cognitive overload.
 
 Platform engineering isn't a rejection of DevOps. It's the natural evolution. Where DevOps broke down silos between development and operations, platform engineering builds the golden paths that make those unified workflows sustainable at scale.
@@ -97,42 +135,93 @@ This means user research, roadmaps, SLAs, and — critically — the ability to 
 
 ## Getting Started
 
-Start small. Pick the most painful workflow in your organization and build a golden path for it. Measure the before and after. Let the results make the case for investment.
-
-The organizations that get this right will compound their advantage for years. The ones that don't will keep wondering why their best engineers keep leaving.`,
+Start small. Pick the most painful workflow in your organization and build a golden path for it. Measure the before and after. Let the results make the case for investment.`,
   },
   {
-    slug: "ai-transformation-beyond-the-pilot",
-    title: "AI Transformation: Moving Beyond the Pilot Phase",
+    slug: "finops-engineering-decisions-business-outcomes",
+    title: "FinOps: Connecting Engineering Decisions to Business Outcomes",
     excerpt:
-      "Most enterprises have run AI pilots. Few have scaled them. The gap isn't technical — it's organizational. A framework for crossing the chasm.",
+      "Cloud costs are engineering decisions wearing a finance hat. Here's how FinOps bridges the gap between what engineers build and what the business pays.",
     category: "Technology",
-    date: "2026-02-28",
-    readTime: "10 min",
+    date: "2026-02-20",
+    readTime: "7 min",
     featured: true,
-    content: `Every enterprise I work with has the same story: they ran a successful AI pilot six months ago. The demo was impressive. Leadership was excited. And then... nothing happened.
+    tags: ["FinOps", "Cloud", "Strategy"],
+    content: `Every architecture decision is a financial decision. That Kubernetes cluster running at 15% utilization? That's not a technical problem — it's a business problem wearing a technical disguise.
 
-The pilot-to-production gap isn't a technology problem. It's a systems problem. And solving it requires thinking about AI transformation the way we think about any organizational change — with strategy, patience, and honest measurement.
+## The FinOps Mindset
 
-## The Pilot Trap
+FinOps isn't about cutting costs. It's about making informed trade-offs. Sometimes the right decision is to spend more — on reserved instances, on better tooling, on faster infrastructure. The key is making that decision intentionally, with visibility into the trade-offs.
 
-Pilots succeed because they're designed to succeed. Small teams, controlled environments, cherry-picked use cases. The real test isn't whether AI can work in your organization. It's whether your organization can work with AI.
+## Three Pillars
 
-## A Framework for Scale
+Effective FinOps operates on three pillars: inform (visibility into who's spending what and why), optimize (right-sizing, reserved capacity, waste elimination), and operate (embedding cost awareness into engineering culture and workflows).
 
-I use a three-horizon model with my clients. Horizon 1 is individual productivity — tools like GitHub Copilot that make existing workflows faster. Horizon 2 is workflow transformation — reimagining processes around AI capabilities. Horizon 3 is business model innovation — new products and services that AI makes possible.
+Most organizations start with optimize because the savings are immediate. But the organizations that sustain FinOps success start with inform — because you can't optimize what you can't see.
 
-Most organizations try to jump to Horizon 3 before they've mastered Horizon 1. That's like trying to run a marathon before you can jog a mile.
+## Unit Economics Matter
 
-## The Change Management Layer
+The most powerful FinOps metric isn't total cloud spend. It's cost per transaction, cost per user, or cost per feature. Unit economics connect engineering decisions to business outcomes in a language that executives understand and engineers can act on.
 
-Technology adoption is behavior change. And behavior change requires more than training sessions and Slack announcements. It requires champions, feedback loops, and — most importantly — permission to experiment and fail.
+## Cultural Shift
 
-The organizations that scale AI successfully are the ones that create psychological safety around AI adoption. When developers feel safe saying "I tried Copilot and it didn't help with this task," you're building honest feedback loops that improve adoption over time.
+FinOps fails when it's positioned as a finance initiative imposed on engineering. It succeeds when engineers see cost as another dimension of quality — alongside performance, reliability, and security. The best FinOps practitioners I've worked with are engineers who learned to speak finance, not finance people who learned to read AWS bills.`,
+  },
+  {
+    slug: "agent-harnesses-controlling-ai-2026",
+    title: "Agent Harnesses: Why 2026 Is About Controlling AI, Not Building More",
+    excerpt:
+      "Enterprises average 12 AI agents with only 27% connected. The real challenge isn't building agents — it's the harness that governs them.",
+    category: "Technology",
+    date: "2026-02-15",
+    readTime: "9 min",
+    tags: ["AI", "Multi-Agent Systems", "Governance"],
+    content: `The agent gold rush is over. Every team has built at least one. Most enterprises now have a dozen or more, each solving a narrow problem brilliantly and creating a broader problem silently — fragmentation.
 
-## Measuring What Matters
+## The Harness Pattern
 
-Stop measuring AI adoption by license utilization. Start measuring it by developer satisfaction, time-to-production, and code quality metrics. The goal isn't to use AI everywhere. It's to use AI where it creates genuine value.`,
+An agent harness is the infrastructure layer that sits between your agents and your business. It handles authentication, rate limiting, logging, cost tracking, and — most critically — the ability to shut things down when they go wrong.
+
+Think of it as the difference between having twelve independent contractors and having twelve employees with a manager. The work might be similar, but the coordination, accountability, and governance are fundamentally different.
+
+## What a Good Harness Provides
+
+A production-grade agent harness provides five capabilities: centralized configuration (change agent behavior without redeploying), unified observability (see what every agent is doing in one place), cost attribution (know which agent is spending what), circuit breakers (automatically disable misbehaving agents), and audit trails (prove what happened and why).
+
+## The Organizational Model
+
+The teams that get agentic AI right are treating it like platform engineering — building shared infrastructure that individual teams consume. The alternative — every team building their own agent infrastructure — leads to the same fragmentation that DevOps was supposed to solve.
+
+## Start With Governance
+
+Before you build your thirteenth agent, build the harness for the twelve you already have. The compound value of governance infrastructure far exceeds the marginal value of one more agent.`,
+  },
+  {
+    slug: "system-design-interviews-staff-plus",
+    title: "System Design Interviews at Staff+ Level: What Actually Changes",
+    excerpt:
+      "The jump from senior to staff system design interviews isn't about knowing more systems — it's about demonstrating different thinking.",
+    category: "Strategy",
+    date: "2026-02-10",
+    readTime: "8 min",
+    tags: ["Interviews", "System Design", "Career"],
+    content: `I've coached over fifty engineers through Staff+ system design interviews. The pattern of failure is remarkably consistent: they design systems that work, but they don't demonstrate the thinking that distinguishes a Staff engineer from a Senior one.
+
+## The Shift in Evaluation
+
+Senior system design interviews evaluate whether you can build a working system. Staff+ interviews evaluate whether you can make the right trade-offs for a specific business context. The system needs to work, obviously — but that's table stakes.
+
+## What Interviewers Actually Look For
+
+At Staff+ level, interviewers are evaluating three things: trade-off articulation (can you explain why you chose X over Y, and under what conditions you'd reverse that decision?), scope management (can you identify what to build now vs. later, and defend that boundary?), and cross-cutting concerns (do you proactively address observability, security, cost, and operational complexity?).
+
+## The Framework
+
+I teach a four-phase approach: clarify (spend 5 minutes understanding the business context, not just the technical requirements), design (build the system in layers, starting with the data model), evaluate (proactively identify weaknesses and propose mitigations), and extend (show how the system evolves as requirements change).
+
+## Common Mistakes
+
+The most common mistake is jumping to implementation details before establishing the design's strategic intent. The second most common is treating non-functional requirements as an afterthought. At Staff+ level, reliability, observability, and cost are first-class design constraints — not things you mention at the end if there's time.`,
   },
   {
     slug: "the-case-for-walking-meetings",
@@ -140,8 +229,9 @@ Stop measuring AI adoption by license utilization. Start measuring it by develop
     excerpt:
       "How replacing conference rooms with trails changed my thinking, my health, and the quality of my conversations.",
     category: "Health",
-    date: "2026-02-20",
+    date: "2026-02-05",
     readTime: "5 min",
+    tags: ["Health", "Productivity", "Leadership"],
     content: `Three years ago, I started taking meetings on foot. Not all of them — just the ones that involve brainstorming, difficult conversations, or strategic thinking. The results have been remarkable.
 
 ## The Science
@@ -159,69 +249,14 @@ Beyond better ideas and better conversations, walking meetings have forced me to
 My Yosemite trips taught me this: the best thinking happens when your body is moving and your mind is free. The office version of that insight is a walking meeting.`,
   },
   {
-    slug: "github-copilot-enterprise-rollout-playbook",
-    title: "The GitHub Copilot Enterprise Rollout Playbook",
-    excerpt:
-      "Lessons from deploying Copilot across 50+ enterprise teams. What works, what doesn't, and the metrics that actually matter.",
-    category: "Technology",
-    date: "2026-02-15",
-    readTime: "12 min",
-    content: `After helping dozens of enterprise teams adopt GitHub Copilot, I've developed a playbook that consistently produces results. Here's the distilled version.
-
-## Phase 1: Foundation (Weeks 1-2)
-
-Start with your most enthusiastic team, not your most critical one. You want early wins and vocal champions, not high-stakes pressure. Configure Copilot with organization-specific context. The default experience is good; a tuned experience is transformative.
-
-## Phase 2: Expansion (Weeks 3-6)
-
-Expand to 3-5 additional teams across different tech stacks. This is where you discover the edge cases — languages where Copilot excels, workflows where it struggles, and the organizational patterns that accelerate or hinder adoption.
-
-## Phase 3: Scale (Weeks 7-12)
-
-Roll out organization-wide with the lessons learned. By now you should have internal champions, documented best practices, and honest metrics about where Copilot adds value.
-
-## The Metrics That Matter
-
-Forget acceptance rate as your north star. Instead, measure: developer satisfaction (survey monthly), time from commit to production (should decrease), and code review cycle time (should decrease). These tell you whether Copilot is making your organization faster, not just whether developers are clicking "accept."
-
-## Common Pitfalls
-
-The biggest mistake is treating Copilot as a typing accelerator. It's a thinking partner. Teams that use it for boilerplate see modest gains. Teams that use it for exploration, testing, and documentation see transformative results.`,
-  },
-  {
-    slug: "consumer-tech-predictions-2026",
-    title: "Consumer Tech That Will Actually Matter in 2026",
-    excerpt:
-      "Cutting through the hype cycle to identify the consumer technologies that will genuinely change how we live and work this year.",
-    category: "Consumer Products",
-    date: "2026-02-10",
-    readTime: "7 min",
-    content: `Every January brings a flood of tech predictions. Most are wrong. Here are the consumer technology shifts I'm genuinely excited about — and why they matter beyond the hype.
-
-## AI Agents That Actually Work
-
-We've moved past chatbots. The consumer AI products shipping now can book travel, manage email, and coordinate schedules across multiple services. The key differentiator isn't intelligence — it's reliability. The products that win will be the ones that work correctly 99% of the time, not the ones that work brilliantly 80% of the time.
-
-## Spatial Computing's Quiet Revolution
-
-Forget the metaverse hype. The real spatial computing revolution is happening in professional tools — architects visualizing buildings, surgeons planning procedures, engineers inspecting infrastructure. Consumer applications will follow, but the professional use cases are where the real value is being created right now.
-
-## The Privacy Premium
-
-Consumers are increasingly willing to pay for privacy. Products that offer genuine data sovereignty — not just privacy theater — are finding eager markets. This is especially true in health tech, where the sensitivity of the data makes privacy a feature, not a constraint.
-
-## What I'm Watching
-
-The intersection of AI and hardware is where the most interesting consumer products will emerge. Devices that are designed from the ground up for AI interaction — not smartphones with AI bolted on — will define the next computing paradigm.`,
-  },
-  {
     slug: "building-a-second-brain-for-strategy",
     title: "Building a Second Brain for Strategic Thinking",
     excerpt:
       "How I use a personal knowledge management system to connect ideas across domains and develop better strategic frameworks.",
     category: "Strategy",
-    date: "2026-02-05",
+    date: "2026-01-28",
     readTime: "6 min",
+    tags: ["Strategy", "Knowledge Management", "Productivity"],
     content: `The best strategic insights come from connecting ideas across domains. A framework from biology applied to organizational design. A principle from architecture applied to software systems. A lesson from history applied to market strategy.
 
 ## The System
@@ -243,69 +278,40 @@ After two years of consistent practice, my second brain contains over 3,000 inte
 This is the real promise of personal knowledge management: not better memory, but better thinking.`,
   },
   {
-    slug: "modernization-without-the-big-bang",
-    title: "Modernization Without the Big Bang",
+    slug: "consumer-ai-products-that-matter-2026",
+    title: "Consumer AI Products That Will Actually Matter in 2026",
     excerpt:
-      "The strangler fig pattern and other strategies for modernizing legacy systems incrementally, without betting the business on a rewrite.",
-    category: "Technology",
-    date: "2026-01-28",
-    readTime: "9 min",
-    content: `"Let's just rewrite it." Four words that have destroyed more engineering organizations than any technical debt ever could.
-
-## The Rewrite Trap
-
-Big-bang rewrites fail for predictable reasons: they take longer than estimated, they introduce new bugs while fixing old ones, and they freeze feature development during the transition. The business can't wait, and the engineering team burns out.
-
-## The Strangler Fig Approach
-
-Instead of replacing a system all at once, wrap it. Build new functionality alongside the old system, gradually routing traffic to the new components. The old system shrinks as the new one grows — like a strangler fig tree growing around its host.
-
-## Practical Patterns
-
-Start with the edges. API gateways, authentication layers, and data access patterns are ideal candidates for incremental modernization. They provide clear boundaries and measurable improvements without touching core business logic.
-
-## The Cultural Component
-
-Modernization isn't just a technical challenge. It requires organizational patience and executive sponsorship. The team needs permission to move slowly and deliberately, even when stakeholders want immediate results.
-
-The organizations that modernize successfully are the ones that treat it as a continuous practice, not a project with a deadline.`,
-  },
-  {
-    slug: "sleep-optimization-for-knowledge-workers",
-    title: "Sleep Optimization for Knowledge Workers",
-    excerpt:
-      "Evidence-based strategies for improving sleep quality when your job requires intense cognitive output during the day.",
-    category: "Health",
+      "Cutting through the hype to identify the AI products that will genuinely change how we live and work this year.",
+    category: "Consumer Products",
     date: "2026-01-20",
-    readTime: "6 min",
-    content: `After years of treating sleep as a variable I could compress, I finally treated it as the foundation everything else depends on. The results were immediate and dramatic.
+    readTime: "7 min",
+    tags: ["AI", "Consumer Tech", "Predictions"],
+    content: `Every January brings a flood of AI predictions. Most are wrong. Here are the consumer AI shifts I'm genuinely excited about — and why they matter beyond the hype.
 
-## The Cognitive Cost
+## AI Agents That Actually Work
 
-Research from Matthew Walker's lab at UC Berkeley shows that even modest sleep deprivation — six hours instead of eight — reduces cognitive performance by 30%. For knowledge workers, that's the difference between breakthrough thinking and mediocre output.
+We've moved past chatbots. The consumer AI products shipping now can book travel, manage email, and coordinate schedules across multiple services. The key differentiator isn't intelligence — it's reliability. The products that win will be the ones that work correctly 99% of the time, not the ones that work brilliantly 80% of the time.
 
-## What Actually Works
+## The Privacy Premium
 
-Based on sleep research and personal experimentation, here are the interventions that made the biggest difference for me: consistent wake time (even weekends), no screens after 9pm, bedroom temperature at 65°F, and morning sunlight within 30 minutes of waking.
+Consumers are increasingly willing to pay for privacy. Products that offer genuine data sovereignty — not just privacy theater — are finding eager markets. This is especially true in health tech, where the sensitivity of the data makes privacy a feature, not a constraint.
 
-## The Caffeine Audit
+## On-Device Intelligence
 
-I cut my caffeine window to before noon. The half-life of caffeine is 5-6 hours, which means that 3pm coffee is still in your system at 9pm. This single change improved my sleep onset time by 20 minutes.
+The most interesting consumer AI products are the ones that run locally. On-device models eliminate latency, protect privacy, and work offline. Apple's approach — powerful models that never leave your device — is setting the standard that others will follow.
 
-## Measuring Progress
+## What I'm Watching
 
-I track sleep with an Oura ring, but the most important metric isn't any number — it's how I feel at 2pm. If I'm reaching for caffeine or struggling to focus, something in my sleep system needs adjustment.
-
-The irony of sleep optimization is that it feels unproductive. You're literally doing nothing. But the compound effect on cognitive performance, emotional regulation, and creative output makes it the highest-leverage health intervention available.`,
+The intersection of AI and hardware is where the most interesting consumer products will emerge. Devices designed from the ground up for AI interaction — not smartphones with AI bolted on — will define the next computing paradigm.`,
   },
 ];
 
 export const categories = [
   "All",
   "Technology",
+  "Strategy",
   "Health",
   "Consumer Products",
-  "Strategy",
 ];
 
 export function formatDate(dateString: string): string {

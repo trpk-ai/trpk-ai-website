@@ -12,7 +12,7 @@ export default function Home() {
   useScrollReveal();
 
   return (
-    <div className="min-h-screen bg-[oklch(0.985_0.005_80)]">
+    <div className="min-h-screen bg-[oklch(0.98_0.005_85)]">
       <Navbar />
       <main>
         <Hero />
