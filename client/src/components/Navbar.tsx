@@ -1,15 +1,34 @@
 /*
- * DESIGN: Granite Terminal — Navbar (Thought Leadership)
- * Minimal fixed nav. Monospace logo with teal dot accent.
- * Transparent → frosted glass on scroll. Links: Worldview, Writing, Engage, Connect.
+ * DESIGN: Robinhood — Navbar
+ * Clean, minimal fixed nav. Sans-serif logo with Robin Neon dot accent.
+ * Transparent → frosted glass on scroll. Theme toggle for light/dark mode.
  */
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
+import { useTheme } from "../contexts/ThemeContext";
+
+function SunIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="4" />
+      <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+    </svg>
+  );
+}
+
+function MoonIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+    </svg>
+  );
+}
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [location] = useLocation();
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -23,8 +42,9 @@ export default function Navbar() {
   }, [location]);
 
   const toggleMobile = () => {
-    setMobileOpen(!mobileOpen);
-    document.body.style.overflow = mobileOpen ? "" : "hidden";
+    const next = !mobileOpen;
+    setMobileOpen(next);
+    document.body.style.overflow = next ? "hidden" : "";
   };
 
   const navLinks = [
@@ -47,35 +67,40 @@ export default function Navbar() {
     }
   };
 
+  const isDark = theme === "dark";
+
   return (
     <>
       <nav
         role="navigation"
         aria-label="Main navigation"
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
-            ? "bg-[oklch(0.98_0.005_85/0.88)] backdrop-blur-2xl shadow-[0_1px_0_oklch(0.65_0.12_190/0.08)]"
+            ? isDark
+              ? "bg-[#0F0F0F]/92 backdrop-blur-2xl border-b border-[#2E2E2E]"
+              : "bg-white/92 backdrop-blur-2xl border-b border-[#E8E8E8]"
             : "bg-transparent"
         }`}
       >
         <div className="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-12 flex items-center justify-between h-14 lg:h-16">
+
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center gap-1.5 font-mono text-[0.8125rem] tracking-wider text-[oklch(0.18_0.01_260)] hover:text-[oklch(0.65_0.12_190)] transition-colors duration-300"
+            className="flex items-center gap-2 text-[0.875rem] font-bold tracking-tight text-foreground hover:text-[#CCFF00] transition-colors duration-200"
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-[oklch(0.65_0.12_190)]" />
+            <span className="w-2 h-2 rounded-full bg-[#CCFF00] neon-pulse" />
             trpk.ai
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-7">
             {navLinks.map((link) =>
               link.href.startsWith("/#") ? (
                 <button
                   key={link.href}
                   onClick={() => handleNavClick(link.href)}
-                  className="text-[0.8125rem] font-sans font-medium tracking-tight text-[oklch(0.45_0.01_260)] hover:text-[oklch(0.18_0.01_260)] transition-colors duration-300"
+                  className="text-[0.8125rem] font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
                 >
                   {link.label}
                 </button>
@@ -83,52 +108,80 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-[0.8125rem] font-sans font-medium tracking-tight text-[oklch(0.45_0.01_260)] hover:text-[oklch(0.18_0.01_260)] transition-colors duration-300"
+                  className="text-[0.8125rem] font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
                 >
                   {link.label}
                 </Link>
               )
             )}
+
+            {/* Theme Toggle */}
+            <button
+              onClick={toggleTheme}
+              className="theme-toggle"
+              aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+              title={isDark ? "Switch to light mode" : "Switch to dark mode"}
+            >
+              {isDark ? <SunIcon /> : <MoonIcon />}
+            </button>
+
+            {/* CTA */}
             <a
               href="https://calendly.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[0.75rem] font-mono font-medium tracking-wide text-[oklch(0.65_0.12_190)] border border-[oklch(0.65_0.12_190/0.25)] px-4 py-1.5 rounded-sm hover:bg-[oklch(0.65_0.12_190/0.06)] hover:border-[oklch(0.65_0.12_190/0.4)] transition-all duration-300"
+              className="btn-neon text-[0.8125rem] py-2 px-5"
             >
               Let's Talk
             </a>
           </div>
 
-          {/* Mobile Hamburger */}
-          <button
-            onClick={toggleMobile}
-            className="md:hidden w-8 h-8 flex flex-col items-center justify-center gap-1.5"
-            aria-label="Toggle menu"
-            aria-expanded={mobileOpen}
-          >
-            <span
-              className={`block w-5 h-[1.5px] bg-[oklch(0.18_0.01_260)] transition-all duration-300 ${
-                mobileOpen ? "rotate-45 translate-y-[4.5px]" : ""
-              }`}
-            />
-            <span
-              className={`block w-5 h-[1.5px] bg-[oklch(0.18_0.01_260)] transition-all duration-300 ${
-                mobileOpen ? "-rotate-45 -translate-y-[4.5px]" : ""
-              }`}
-            />
-          </button>
+          {/* Mobile: Theme Toggle + Hamburger */}
+          <div className="md:hidden flex items-center gap-3">
+            <button
+              onClick={toggleTheme}
+              className="theme-toggle"
+              aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+            >
+              {isDark ? <SunIcon /> : <MoonIcon />}
+            </button>
+            <button
+              onClick={toggleMobile}
+              className="w-8 h-8 flex flex-col items-center justify-center gap-[5px]"
+              aria-label="Toggle menu"
+              aria-expanded={mobileOpen}
+            >
+              <span
+                className={`block w-5 h-[1.5px] bg-foreground transition-all duration-300 ${
+                  mobileOpen ? "rotate-45 translate-y-[6.5px]" : ""
+                }`}
+              />
+              <span
+                className={`block w-5 h-[1.5px] bg-foreground transition-all duration-300 ${
+                  mobileOpen ? "opacity-0" : ""
+                }`}
+              />
+              <span
+                className={`block w-5 h-[1.5px] bg-foreground transition-all duration-300 ${
+                  mobileOpen ? "-rotate-45 -translate-y-[6.5px]" : ""
+                }`}
+              />
+            </button>
+          </div>
         </div>
       </nav>
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 z-40 bg-[oklch(0.98_0.005_85/0.97)] backdrop-blur-3xl flex flex-col items-start justify-center px-8 transition-all duration-500 ${
+        className={`fixed inset-0 z-40 flex flex-col items-start justify-center px-8 transition-all duration-300 ${
+          isDark ? "bg-[#0F0F0F]/97 backdrop-blur-3xl" : "bg-white/97 backdrop-blur-3xl"
+        } ${
           mobileOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
         }`}
       >
-        <nav className="flex flex-col gap-6">
+        <nav className="flex flex-col gap-7">
           {navLinks.map((link, i) =>
             link.href.startsWith("/#") ? (
               <button
@@ -137,7 +190,7 @@ export default function Navbar() {
                   toggleMobile();
                   handleNavClick(link.href);
                 }}
-                className="text-left font-heading font-semibold text-3xl tracking-tight text-[oklch(0.18_0.01_260)] hover:text-[oklch(0.65_0.12_190)] transition-colors"
+                className="text-left font-bold text-3xl tracking-tight text-foreground hover:text-[#CCFF00] transition-colors"
                 style={{ transitionDelay: `${i * 50}ms` }}
               >
                 {link.label}
@@ -146,7 +199,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="font-heading font-semibold text-3xl tracking-tight text-[oklch(0.18_0.01_260)] hover:text-[oklch(0.65_0.12_190)] transition-colors"
+                className="font-bold text-3xl tracking-tight text-foreground hover:text-[#CCFF00] transition-colors"
                 style={{ transitionDelay: `${i * 50}ms` }}
               >
                 {link.label}
@@ -157,9 +210,9 @@ export default function Navbar() {
             href="https://calendly.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-mono text-lg text-[oklch(0.65_0.12_190)] mt-4"
+            className="btn-neon mt-4 self-start"
           >
-            Let's Talk →
+            Let's Talk
           </a>
         </nav>
       </div>

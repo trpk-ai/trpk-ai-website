@@ -32,7 +32,7 @@ export default function Connect() {
       </div>
 
       <div className="relative z-10 max-w-[700px] mx-auto px-5 sm:px-6 lg:px-12 text-center">
-        <p className="font-mono text-[0.6875rem] tracking-[0.15em] uppercase text-[oklch(0.65_0.12_190)] mb-5 sm:mb-6 fade-up">
+        <p className="font-mono text-[0.6875rem] tracking-[0.15em] uppercase text-[#CCFF00] mb-5 sm:mb-6 fade-up">
           // connect
         </p>
 
@@ -50,11 +50,11 @@ export default function Connect() {
         {/* Newsletter form */}
         <div className="mt-8 sm:mt-10 fade-up fade-up-delay-3">
           {subscribed ? (
-            <div className="inline-flex items-center gap-2 px-6 py-3 bg-[oklch(0.65_0.12_190/0.1)] border border-[oklch(0.65_0.12_190/0.2)] rounded-sm">
+            <div className="inline-flex items-center gap-2 px-6 py-3 bg-[#CCFF00/0.1)] border border-[#CCFF00/0.2)] rounded-sm">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path d="M3 8.5l3 3 7-7" stroke="oklch(0.65 0.12 190)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
-              <span className="text-sm font-mono text-[oklch(0.65_0.12_190)]">
+              <span className="text-sm font-mono text-[#CCFF00]">
                 You're in. First issue coming soon.
               </span>
             </div>
@@ -69,11 +69,11 @@ export default function Connect() {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="your@email.com"
                 required
-                className="flex-1 px-4 py-3 bg-[oklch(0.1_0.01_260/0.6)] border border-[oklch(0.95_0.005_85/0.12)] rounded-sm text-sm font-sans text-[oklch(0.95_0.005_85)] placeholder:text-[oklch(0.5_0.005_85)] focus:outline-none focus:border-[oklch(0.65_0.12_190/0.4)] focus:ring-1 focus:ring-[oklch(0.65_0.12_190/0.2)] transition-all duration-300"
+                className="flex-1 px-4 py-3 bg-[oklch(0.1_0.01_260/0.6)] border border-[oklch(0.95_0.005_85/0.12)] rounded-sm text-sm font-sans text-[oklch(0.95_0.005_85)] placeholder:text-[oklch(0.5_0.005_85)] focus:outline-none focus:border-[#CCFF00/0.4)] focus:ring-1 focus:ring-[#CCFF00/0.2)] transition-all duration-300"
               />
               <button
                 type="submit"
-                className="px-6 py-3 bg-[oklch(0.65_0.12_190)] text-[oklch(0.98_0.005_85)] text-sm font-sans font-medium tracking-wide rounded-sm hover:bg-[oklch(0.72_0.12_190)] transition-colors duration-300 whitespace-nowrap"
+                className="px-6 py-3 bg-[#CCFF00] text-[oklch(0.98_0.005_85)] text-sm font-sans font-medium tracking-wide rounded-sm hover:bg-[oklch(0.72_0.12_190)] transition-colors duration-300 whitespace-nowrap"
               >
                 Subscribe
               </button>
@@ -83,7 +83,7 @@ export default function Connect() {
 
         {/* Secondary CTA — booking */}
         <div className="mt-10 sm:mt-14 fade-up fade-up-delay-4">
-          <div className="h-px w-24 mx-auto bg-gradient-to-r from-transparent via-[oklch(0.65_0.12_190/0.3)] to-transparent mb-6 sm:mb-8" />
+          <div className="h-px w-24 mx-auto bg-gradient-to-r from-transparent via-[#CCFF00/0.3)] to-transparent mb-6 sm:mb-8" />
           <p className="text-[0.8125rem] text-[oklch(0.6_0.005_85)] mb-3">
             Want to go deeper? Let's talk.
           </p>
@@ -92,14 +92,14 @@ export default function Connect() {
               href="https://calendly.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm font-mono font-medium text-[oklch(0.65_0.12_190)] hover:text-[oklch(0.72_0.12_190)] transition-colors duration-300"
+              className="inline-flex items-center gap-2 text-sm font-mono font-medium text-[#CCFF00] hover:text-[oklch(0.72_0.12_190)] transition-colors duration-300"
             >
               Book a free call →
             </a>
             <span className="hidden sm:block w-px h-4 bg-[oklch(0.95_0.005_85/0.15)]" />
             <a
               href="mailto:hello@trpk.ai"
-              className="inline-flex items-center gap-2 text-sm font-mono text-[oklch(0.55_0.005_85)] hover:text-[oklch(0.65_0.12_190)] transition-colors duration-300"
+              className="inline-flex items-center gap-2 text-sm font-mono text-[oklch(0.55_0.005_85)] hover:text-[#CCFF00] transition-colors duration-300"
             >
               hello@trpk.ai
             </a>
@@ -108,7 +108,7 @@ export default function Connect() {
       </div>
 
       {/* Top circuit line */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[oklch(0.65_0.12_190/0.2)] to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#CCFF00/0.2)] to-transparent" />
     </section>
   );
 }

@@ -10,12 +10,12 @@ export default function About() {
     <section id="about" className="py-16 sm:py-24 lg:py-36 bg-[oklch(0.98_0.005_85)]">
       <div className="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-12">
         {/* Circuit line divider */}
-        <div className="circuit-line mb-10 sm:mb-16 fade-up" />
+        <div className="rh-divider mb-10 sm:mb-16 fade-up" />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-20 items-start">
           {/* Left column — manifesto text */}
           <div className="lg:col-span-7 order-2 lg:order-1">
-            <p className="terminal-label mb-4 sm:mb-6 fade-up">// worldview</p>
+            <p className="tag-neon mb-4 sm:mb-6 fade-up">// worldview</p>
 
             <h2 className="fade-up fade-up-delay-1">
               Software engineering is becoming a{" "}
@@ -44,7 +44,7 @@ export default function About() {
                 insider who sees the patterns — is what I write about and advise
                 on. The rest will automate chaos.
               </p>
-              <p className="text-[0.9375rem] sm:text-base lg:text-[1.0625rem] leading-[1.8] text-[oklch(0.5_0.01_260)] italic">
+              <p className="text-[0.9375rem] sm:text-base lg:text-[1.0625rem] leading-[1.8] text-muted-foreground italic">
                 I think in systems — whether it's platform architecture,
                 human biology, or the food we eat. I find my clearest thinking
                 on the granite trails of Yosemite. The same patience that
@@ -63,7 +63,7 @@ export default function About() {
                 "Biohacker",
                 "Systems Thinker",
               ].map((tag) => (
-                <span key={tag} className="tag-pill">
+                <span key={tag} className="tag-neon">
                   {tag}
                 </span>
               ))}
@@ -76,13 +76,13 @@ export default function About() {
               <img
                 src="https://d2xsxph8kpxj0f.cloudfront.net/310519663340106296/SC4N3PtoqtKXuEYmdpeXhv/portrait-final_01a1c3dc.png"
                 alt="Pavan Tallapragada — Platform Engineering & AI Thought Leader"
-                className="w-full aspect-[1/1] object-cover object-top rounded-sm bg-[oklch(0.96_0.005_85)]"
+                className="w-full aspect-[1/1] object-cover object-top rounded-sm bg-secondary"
                 loading="lazy"
               />
               {/* Teal accent line under image */}
               <div className="mt-3 flex items-center gap-3">
                 <div className="h-px flex-1 bg-gradient-to-r from-[oklch(0.65_0.12_190/0.3)] to-transparent" />
-                <p className="text-[0.625rem] font-mono text-[oklch(0.65_0.12_190)] tracking-wider">
+                <p className="text-[0.625rem] font-mono text-[#CCFF00] tracking-wider">
                   Yosemite Valley
                 </p>
               </div>
