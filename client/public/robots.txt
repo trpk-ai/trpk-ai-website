@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://trpk.ai/sitemap.xml
+
+# Disallow admin/private paths if they exist in the future
+Disallow: /api/
+Disallow: /__manus__/
